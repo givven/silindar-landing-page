@@ -1,0 +1,97 @@
+SectionsContainer{
+font-family: sofia-pro, sans-serif;
+font-weight: 400;
+}
+
+.job-group-element{
+display: inline;
+}
+
+.region-element{
+display: inline;
+}
+
+.inform-element{
+display: inline;
+}
+
+.container{
+    background-color: #000000;
+    /* background: linear-gradient(180deg, #0055ff 0%, rgb(0, 153, 255) 100%); */
+}
+
+.section1{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100%;
+color: #ffffff;
+
+margin-bottom: 50px;
+}
+
+.section2{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100%;
+color: #ffffff;
+}
+
+.section3{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100%;
+color: #ffffff;
+}
+
+.box {
+width: 1084px;
+height: 100%;
+}
+
+.jobFrame{
+    /* width: 500px; */
+    height: 154px;
+    background: #2B2B2B;
+    border-radius: 5px;
+    text-align: center;
+    border: 2px solid #000000;
+}
+
+.jobFrame h1{
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+
+.jobFrame div{
+    display: flex;
+    align-items: center;
+}
+.informFrame{
+    /* width: 500px; */
+    height: 154px;
+    background: #2B2B2B;
+    border-radius: 5px;
+    text-align: center;
+    border: 2px solid #000000;
+}
+.informFrame h1{
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+
+
+.informFrame div{
+    display: flex;
+    align-items: center;
+}
+
+.page2{
+    width: 100%;
+}

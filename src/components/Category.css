@@ -1,0 +1,12 @@
+.region-element{
+display: inline;
+}
+
+.inform-element{
+display: inline;
+}
+
+#category{
+    font-weight: 100;
+    font-size: 20px;
+}

@@ -1,0 +1,24 @@
+#root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background: crimson;
+    overflow: hidden;
+  }
+  
+  .box {
+    background: #fff;
+    width: 50vmin;
+    height: 50vmin;
+  }
+  

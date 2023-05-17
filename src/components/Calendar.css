@@ -1,0 +1,49 @@
+.fc-theme-standard .fc-scrollgrid {
+    border: none;
+}
+
+.fc-scrollgrid-section-header>th{
+    padding-bottom: 30px;
+    border: 2px 2px rgba(61, 61, 61, 0.3);
+    color: #ffffff;
+}
+
+.fc-scrollgrid-section-header>th>.fc-scroller-harness{
+    border-color: #000000;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-color: #8B8B8B;
+}
+
+.fc-daygrid-day{
+    background-color: #3D3D3D;
+}
+
+.fc-day-sun{
+    color: red;
+}
+
+.fc-day-today>div{
+    background-color: #3D3D3D;
+}
+
+.calendar{
+    margin-bottom: 20px;
+}
+
+.fc-day{
+    background-color: #222222;
+    border-right: #8B8B8B;
+}
+
+.fc .fc-daygrid-day-frame{
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+    border-bottom: 4px solid black;
+}
+.fc-day-sat div{
+    border-right: 0px;
+}
+.fc .fc-daygrid-day.fc-day-today > div{
+    background-color: #222222;
+}

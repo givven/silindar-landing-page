@@ -1,0 +1,41 @@
+#section1__title{
+    margin-top: 115px;
+    margin-bottom: 11px;
+    font-weight: 700;
+    text-align: center;
+}
+#section1__title .t1{
+    font-size: 4vmin;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+#section1__title .t2{
+    margin-bottom: 35px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+}
+
+#section1__title .t3{
+    font-size: 3vmin;
+    margin-bottom: 10px;
+}
+
+#section1__title .t4{
+    font-size: 3vmin;
+    margin-bottom: 71px;
+}
+
+
+.job-group-element title{
+    margin-right: 10px;
+}
+
+#job{
+    color: rgba(214, 255, 1, 1);
+}
+
+.inform{
+    color: rgba(245, 234, 24, 1);
+}
