@@ -1,0 +1,10 @@
+div{
+    width: 1000px;
+    height: 1000px;
+}
+
+.cropped1{
+    width: 1084px;
+    height: 780px;
+    object-fit: cover;
+}
