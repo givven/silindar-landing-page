@@ -20,4 +20,4 @@ jobs:
       - name: Create Issue Branch
         uses: robvanderleek/create-issue-branch@main
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}create_branch_for_issue.yml
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
