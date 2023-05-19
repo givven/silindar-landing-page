@@ -1,0 +1,101 @@
+#section4__advance{
+    text-align: center;
+}
+
+.advance-1{
+    text-align: center;
+    /* font-family: 'Pretendard'; */
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 150%;
+    letter-spacing: -0.6px;
+
+    color: #D6FF01;
+}
+
+
+.advance-2{
+    text-align: center;
+    margin-top: 50px;
+    /* font-family: 'Pretendard'; */
+    font-style: normal;
+    font-weight: 500;
+    font-size: 33px;
+    line-height: 150%;
+
+    letter-spacing: -0.6px;
+
+    color: #EFEFEF;
+}
+
+.advance-3{
+    text-align: center;
+    margin-top: 18px;
+    /* font-family: 'Pretendard'; */
+    font-style: normal;
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 150%;
+
+    letter-spacing: -0.6px;
+
+    color: #6F6F6F;
+
+}
+
+.advance-4{
+    text-align: center;
+    margin-top: 67px;
+    /* font-family: 'Pretendard'; */
+    font-style: normal;
+    font-weight: 700;
+    font-size: 33px;
+    line-height: 150%;
+
+    letter-spacing: -0.6px;
+
+    color: #EFEFEF;
+}
+
+.advance-5{
+    text-align: center;
+    margin-top: 13px;
+    /* font-family: 'Pretendard'; */
+    font-style: normal;
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 150%;
+
+    letter-spacing: -0.6px;
+
+    color: #EFEFEF;
+
+}
+
+.advance-6{
+    text-align: center;
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 220px;
+    height: 36px;
+
+    background: #DDEB97;
+    border: 1px solid #6F6F6F;
+    border-radius: 70px;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 150%;
+}
+
+.advance-6-background{
+    margin-top: 40px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}

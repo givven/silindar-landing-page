@@ -47,3 +47,7 @@
 .fc .fc-daygrid-day.fc-day-today > div{
     background-color: #222222;
 }
+
+.fc-event-main{
+    overflow: hidden;
+}

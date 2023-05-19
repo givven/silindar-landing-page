@@ -1,4 +1,4 @@
-import { Cookies } from "react-cookie"
+
 
 
 const event = [
@@ -10,6 +10,6 @@ const event = [
     {allDay: true, status:false, id:5, typed:'network', title: '(강남) 현직 기획자들과 와인 파티' ,start: '2023-05-28', color:'#0A6A71',}
 ];
 
-const cookie = new Cookies();
-cookie.set('event-data',event);
-console.log(cookie.get('event-data'));
+// const cookie = new Cookies();
+// cookie.set('event-data',event);
+// console.log(cookie.get('event-data'));

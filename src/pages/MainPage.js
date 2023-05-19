@@ -11,7 +11,7 @@ import Calendar from '../components/Calendar';
 import CategoryJobGroup from '../components/CategoryJobGroup';
 import { Col, Row } from 'react-bootstrap';
 import CategoryInform from '../components/CategoryInform';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Cookies } from 'react-cookie';
 import CheckBox from '../components/CheckBox';
 // import {cookie} from '../metadata/calendar_event_data';
@@ -25,6 +25,7 @@ import { createSelector } from 'reselect';
 import { getHashValues } from '../components/utils';
 import { connect } from 'react-redux';
 import actionCreators from '../actions'
+import AdvanceReservation from '../components/AdvanceReservation';
 
 
 class MainPage extends React.Component{
@@ -98,7 +99,13 @@ class MainPage extends React.Component{
       <div>
         {/* <SectionsContainer className="container" {...options}> */}
             {/* <Section> */}
+              <div className='section0'>
+                <div className='section0__cropped'>
+                  <img src='images/title.svg' className='section0__pages'></img>
+                </div>
+              </div>
               <div className='section1'>
+                
                 <div className='box'>
                   <motion.div
                     initial={{ opacity: 0, x: -200}}
@@ -109,6 +116,7 @@ class MainPage extends React.Component{
                       x: 0
                     }}
                   >
+                    
                     <Row>
                       <Col className="min-vw-50">
                         <Title></Title>
@@ -119,11 +127,11 @@ class MainPage extends React.Component{
                   </motion.div>
                   
                   <motion.div 
-                      initial={{ opacity: 0, x: -200}}
+                      initial={{ opacity: 0,}}
                       whileInView={{
                         opacity: 1, 
                         scale: 1,
-                        transition:{ delay: 1.5, duration: 1.5},
+                        transition:{ delay: 1, duration: 1.5},
                         x: 0
                       }}
                   >
@@ -132,33 +140,63 @@ class MainPage extends React.Component{
                     <Row>
                       <Col xs="12">
                       <div className='calendar'>
-                      <FullCalendar
-                            height={658}
-                            plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-                            headerToolbar={false}
-                            initialView='dayGridMonth'
-                            ref={this.calendarRef}
-                            selectMirror={true}
-                            dayMaxEvents={true}
-                            weekends={this.props.weekendsVisible}
-                            datesSet={this.handleDates}
-                            select={this.handleDateSelect}
-                            events={this.props.events}
-                            eventContent={renderEventContent} // custom render function
-                            
-                            eventClick={this.handleEventClick}
-                            eventAdd={this.handleEventAdd}
-                            editable={true}
-                            selectable={true}
-                            dayHeaderContent={function(arg){
-                              return DAY_NAMES[arg.date.getDay()]
-                            }}
-                            
-                            eventChange={this.handleEventChange} // called for drag-n-drop/resize
-                            eventRemove={this.handleEventRemove}
-                            fixedWeekCount={false}
-                          />
+                        <FullCalendar
+                          height={658}
+                          plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+                          headerToolbar={false}
+                          initialView='dayGridMonth'
+                          ref={this.calendarRef}
+                          selectMirror={true}
+                          dayMaxEvents={true}
+                          weekends={this.props.weekendsVisible}
+                          datesSet={this.handleDates}
+                          select={this.handleDateSelect}
+                          events={this.props.events}
+                          eventContent={renderEventContent} // custom render function
+                          
+                          eventClick={this.handleEventClick}
+                          eventAdd={this.handleEventAdd}
+                          editable={true}
+                          selectable={true}
+                          dayHeaderContent={function(arg){
+                            return DAY_NAMES[arg.date.getDay()]
+                          }}
+                          displayEventEnd={true}
+                          eventChange={this.handleEventChange} // called for drag-n-drop/resize
+                          eventRemove={this.handleEventRemove}
+                          fixedWeekCount={false}
+                        />
                       </div>
+                      </Col>
+                    </Row>
+
+
+                    <Row className="justify-content-center ml-0 mr-0 p-0 mt-5">
+                      <Col xs="12" md="6" className='jobFrame'>
+                        <h1>직군 선택</h1>
+                        <Row className="justify-content-center">
+                          <CategoryJobGroup></CategoryJobGroup>
+                        </Row>
+                      </Col>
+
+                      <Col xs="12" md="6" className='informFrame'>
+                        <h1>정보 선택</h1>
+                        <Row className="justify-content-center">
+                            {
+                            inform_list.map((inform)=>(
+                                <Col xs="3">
+                                  <article className={'informGroup'}>
+                                  <input 
+                                  type="checkbox" id={inform.id} 
+                                  name="radios" value={inform.id} onChange={onChange}/>
+                                  <div>
+                                      <span>{inform.name}</span>
+                                  </div>
+                                  </article>
+                                </Col>
+                            ))
+                            }
+                        </Row>
                       </Col>
                     </Row>
                     
@@ -177,7 +215,7 @@ class MainPage extends React.Component{
                   >
                     {/* <Category></Category> */}
 
-                    <Row className="justify-content-center ml-0 mr-0 p-0 mt-5">
+                    {/* <Row className="justify-content-center ml-0 mr-0 p-0 mt-5">
                       <Col xs="12" md="6" className='jobFrame'>
                         <h1>직군 선택</h1>
                         <Row className="justify-content-center">
@@ -188,10 +226,6 @@ class MainPage extends React.Component{
                       <Col xs="12" md="6" className='informFrame'>
                         <h1>정보 선택</h1>
                         <Row className="justify-content-center">
-                          {/* <CategoryInform 
-                          check_state={check_state}
-                          setCheckState={setCheckState}
-                          /> */}
                             {
                             inform_list.map((inform)=>(
                                 <Col xs="3">
@@ -208,7 +242,7 @@ class MainPage extends React.Component{
                             }
                         </Row>
                       </Col>
-                    </Row>
+                    </Row> */}
                   </motion.div>
                 </div>
               </div>
@@ -216,35 +250,93 @@ class MainPage extends React.Component{
   
             {/* <Section> */}
               <div className='section2'>
-              <motion.div
-                  className="box"
-                  // animate={{
-                  //   scale: [1, 2, 2, 1, 1],
-                  //   rotate: [0, 0, 180, 180, 0],
-                  //   borderRadius: ["0%", "0%", "50%", "50%", "0%"]
-                  // }}
-                  // transition={{
-                  //   duration: 2,
-                  //   ease: "easeInOut",
-                  //   times: [0, 0.2, 0.5, 0.8, 1],
-                  // }}
+                <div className='cropped'>
+                  <img src='images/page0.svg' className='pages'></img>
+                </div>
+              </div>
+              <div className='section2 page1-frame'>
+                  <div className='cropped'>
+                    <img src='images/page1.svg' className='pages'></img>
+                  </div>
+              </div>
+              <div className='section2 page2-frame'>
+                  <div className='cropped'>
+                    <img src='images/page2.svg' className='pages'></img>
+                  </div>
+
+              {/* <motion.div
+                  className="box page-section"
                   initial={{ opacity: 0, scale: 0 }}
                   transition={{ duration: 1.5 }}
                   whileInView={{
                     opacity: 1,
                     scale: 1,
-                    // rotate: [0, 360],
                   }}
               >
-                {/* <div className='page2'> */}
-                  <img src='images/page2.png' className='page2'></img>
-                {/* </div> */}
-              </motion.div>
+                <Row>
+                  <Col xs="12">
+                    <img src='images/page4.svg' className='pages'></img>
+                  </Col>
+                </Row>
+              </motion.div> */}
+
+              
               </div>
             {/* </Section> */}
+
+
+            {/* <Section> */}
+            <div className='section3'>
+              <div className='cropped'>
+                  <img src='images/page4.svg' className='pages'></img>
+              </div>
+
+              {/* <motion.div
+                  className="box page-section"
+                  initial={{ opacity: 0, scale: 0 }}
+                  transition={{ duration: 1.5 }}
+                  whileInView={{
+                    opacity: 1,
+                    scale: 1,
+                  }}
+              >
+                <Row>
+                  <Col xs="12">
+                    <img src='images/page4.svg' className='pages'></img>
+                  </Col>
+                </Row>
+              </motion.div> */}
+
+              
+            </div>
+            {/* </Section> */}
+
+
+            {/* <Section> */}
+            <div className='section4'>
+              <motion.div
+                  className="box page-section"
+                  initial={{ opacity: 0, scale: 0 }}
+                  transition={{ duration: 1.5 }}
+                  whileInView={{
+                    opacity: 1,
+                    scale: 1,
+                  }}
+              >
+                <Row>
+                  <Col xs="12">
+                    <AdvanceReservation></AdvanceReservation>
+                  </Col>
+                </Row>
+              </motion.div>
+            </div>
+            {/* </Section> */}
+
+
+
   
             {/* <Section> */}
-              <div className='section3'>
+              {/* <div className='section3'>
                 <motion.div
                   className="box"
                   initial={{ opacity: 0, scale: 0 }}
@@ -258,7 +350,7 @@ class MainPage extends React.Component{
                   <div><h1>컨퍼런스 개최, 스터디 등 공유 캘린더에 광고를 문의 하고싶은 분께서는 아래 폼을 통해 보내시기 바랍니다. /관련 현직자가 엄선을 통해 등록됩니다.</h1></div>
                   <Contact></Contact>
                 </motion.div>
-              </div>
+              </div> */}
             {/* </Section> */}
         {/* </SectionsContainer> */}
       </div>
@@ -369,184 +461,3 @@ function mapStateToProps() {
 }
 
 export default connect(mapStateToProps, actionCreators)(MainPage)
-
-
-// export default function MainPage() {
-//   let options = {
-//     anchors: ['sectionOne', 'sectionTwo', 'sectionThree'],
-//     navigation: true,
-//     delay: 1000,
-//     scrollbars: false,
-//     verticalAlign: true,
-//   };
-//   const cookies = new Cookies();
-//   const [event_data, setEventData] = useState(cookies.get('event-data'));
-//   const [check_state, setCheckState] = useState(
-//     {'contest':false, 'network':false, 'consult': false, 'study':false}
-//   );
-
-//   const calendarRef = React.createRef();
-
-//   const inform_list = [
-//     {id:'contest',name:'공모전'},
-//     {id:'network',name:'네트워킹'},
-//     {id:'consult',name:'컨설팅'},
-//     {id:'study',name:'스터디'},
-//   ]
-
-//   const onChange = ({target})=>{
-//     console.log(target.checked);
-//     console.log(target.id);
-//     console.log(check_state);
-//     try{
-//         // console.log(calendarRef.current);
-//         console.log("오잉");
-//         check_state[target.id] = target.checked;
-//         // setStateCheck({...check_state});
-//         console.log("또또또")
-//     }
-//     catch{
-
-//     }
-//     console.log(check_state);
-//   };  
-
-//   return (
-//     <div>
-//       {/* <SectionsContainer className="container" {...options}> */}
-//           {/* <Section> */}
-//             <div className='section1'>
-//               <div className='box'>
-//                 <motion.div
-//                   initial={{ opacity: 0, x: -200}}
-//                   whileInView={{
-//                     opacity: 1, 
-//                     scale: 1,
-//                     transition:{ duration: 1.5},
-//                     x: 0
-//                   }}
-//                 >
-//                   <Row>
-//                     <Col className="min-vw-50">
-//                     <Title></Title>
-//                     </Col>
-//                   <br></br>
-//                   </Row>
-//                   <Row className="justify-content-center">
-//                   <CategoryJobGroup></CategoryJobGroup>
-//                   </Row>
-//                   <br></br>
-//                 </motion.div>
-//                 <motion.div 
-//                     initial={{ opacity: 0, x: -200}}
-//                     whileInView={{
-//                       opacity: 1, 
-//                       scale: 1,
-//                       transition:{ delay: 1.5, duration: 1.5},
-//                       x: 0
-//                     }}
-//                 >
-//                   {/* <Calendar event_data={event_data} check_state={check_state}></Calendar> */}
-//                   <DemoApp calendarRef={calendarRef}></DemoApp>
-
-//                   {/* <CalendarModule></CalendarModule> */}
-            
-//                 </motion.div>
-//                 <motion.div 
-//                     initial={{ opacity: 0, x: -200}}
-//                     whileInView={{
-//                       opacity: 1, 
-//                       scale: 1,
-//                       transition:{ delay: 1.5, duration: 1.5},
-//                       x: 0
-//                     }}
-//                 >
-//                   {/* <Category></Category> */}
-//                   <Row className="justify-content-center">
-//                     {/* <CategoryInform 
-//                     check_state={check_state}
-//                     setCheckState={setCheckState}
-//                     /> */}
-//                     {
-//                     inform_list.map((inform)=>(
-//                         <Col xs="2" md="3" lg="2">
-//                           <article className={'informGroup'}>
-//                           <input 
-//                           type="checkbox" id={inform.id} 
-//                           name="radios" value={inform.id} onChange={onChange}/>
-//                           <div>
-//                               <span>{inform.name}</span>
-//                           </div>
-//                           </article>
-//                         </Col>
-//                     ))
-//                     }
-//                   </Row>
-//                 </motion.div>
-//               </div>
-//             </div>
-//           {/* </Section> */}
-
-//           {/* <Section> */}
-//             <div className='section2'>
-//             <motion.div
-//                 className="box"
-//                 // animate={{
-//                 //   scale: [1, 2, 2, 1, 1],
-//                 //   rotate: [0, 0, 180, 180, 0],
-//                 //   borderRadius: ["0%", "0%", "50%", "50%", "0%"]
-//                 // }}
-//                 // transition={{
-//                 //   duration: 2,
-//                 //   ease: "easeInOut",
-//                 //   times: [0, 0.2, 0.5, 0.8, 1],
-//                 // }}
-//                 initial={{ opacity: 0, scale: 0 }}
-//                 transition={{ duration: 1 }}
-//                 whileInView={{
-//                   opacity: 1,
-//                   scale: 1,
-//                   rotate: [0, 360],
-//                 }}
-//             >
-//               <br></br><br></br><br></br><br></br>
-//               <br></br><br></br><br></br><br></br>
-//               <br></br><br></br><br></br><br></br>
-//               <br></br><br></br><br></br><br></br>
-//               <br></br><br></br><br></br><br></br>
-//               <br></br><br></br><br></br><br></br>
-//               <div><h1>Slindar란?</h1></div>
-//               <div>
-//                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, ab mollitia dolorem nam molestiae in. Sint numquam perferendis tempora molestiae veniam impedit dolores ratione accusamus quasi ullam, iure animi voluptatem.</p>
-//                 <h1>이러한 분들께 좋아요!</h1>
-//                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, ab mollitia dolorem nam molestiae in. Sint numquam perferendis tempora molestiae veniam impedit dolores ratione accusamus quasi ullam, iure animi voluptatem.</p>
-//                 <h1>출시 예정일</h1>
-//                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, ab mollitia dolorem nam molestiae in. Sint numquam perferendis tempora molestiae veniam impedit dolores ratione accusamus quasi ullam, iure animi voluptatem.</p>
-//                 <h1>단돈 900원으로 원하시는 개인 맞춤 "다음 달" 캘린더를 미리 만나보세요!</h1>
-//                 <h1>계좌번호 ********* / 아래 폼을 통해 입금자 명/이메일/원하시는 직군,지역,정보를 보내주시기 바랍니다.</h1>
-//               </div>
-//             </motion.div>
-//             </div>
-//           {/* </Section> */}
-
-//           {/* <Section> */}
-//             <div className='section3'>
-//               <motion.div
-//                 className="box"
-//                 initial={{ opacity: 0, scale: 0 }}
-//                 transition={{ duration: 1 }}
-//                 whileInView={{
-//                   opacity: 1,
-//                   scale: 1,
-//                   rotate: [0, 360],
-//                 }}
-//               >
-//                 <div><h1>컨퍼런스 개최, 스터디 등 공유 캘린더에 광고를 문의 하고싶은 분께서는 아래 폼을 통해 보내시기 바랍니다. /관련 현직자가 엄선을 통해 등록됩니다.</h1></div>
-//                 <Contact></Contact>
-//               </motion.div>
-//             </div>
-//           {/* </Section> */}
-//       {/* </SectionsContainer> */}
-//     </div>
-//   );
-// }
