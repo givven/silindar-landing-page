@@ -6,6 +6,8 @@ branches:
     prefix: bugfix/
   - label: enhancement
     prefix: feature/
+  - label: refactor
+    prefix: refactor/
   - label: '*'
     prefix: issues/
     
