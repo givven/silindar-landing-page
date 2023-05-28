@@ -1,0 +1,25 @@
+#calendar_note{
+    margin-top: 78px;
+    margin-bottom: 11px;
+    font-weight: 700;
+    text-align: center;
+}
+#calendar_note .t1{
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+#calendar_note .t2{
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #F7F7F7;
+    font-weight: 500;
+}
+
+#calendar_note .t3{
+    font-size: 16px;
+    color: #F7F7F7;
+    font-weight: 500;
+}

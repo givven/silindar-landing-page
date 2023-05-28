@@ -1,4 +1,4 @@
-.fc-theme-standard .fc-scrollgrid {
+.fc-theme-standard .fc-scrollgrid{
     border: none;
 }
 
@@ -37,9 +37,9 @@
 }
 
 .fc .fc-daygrid-day-frame{
-    border-right: 2px solid black;
-    border-left: 2px solid black;
-    border-bottom: 4px solid black;
+    border-right: 2px solid #171717;
+    border-left: 2px solid #171717;
+    border-bottom: 4px solid #171717;
 }
 .fc-day-sat div{
     border-right: 0px;

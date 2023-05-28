@@ -5,7 +5,7 @@
     text-align: center;
 }
 #section1__title .t1{
-    font-size: 4vmin;
+    font-size: 40px;
     margin-bottom: 10px;
     font-weight: 700;
 }
@@ -18,12 +18,12 @@
 }
 
 #section1__title .t3{
-    font-size: 3vmin;
+    font-size: 28px;
     margin-bottom: 10px;
 }
 
 #section1__title .t4{
-    font-size: 3vmin;
+    font-size: 28px;
     margin-bottom: 71px;
 }
 

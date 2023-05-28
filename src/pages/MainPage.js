@@ -26,6 +26,10 @@ import { getHashValues } from '../components/utils';
 import { connect } from 'react-redux';
 import actionCreators from '../actions'
 import AdvanceReservation from '../components/AdvanceReservation';
+import CalendarNote from '../components/CalendarNote';
+import ServiceSummary from '../components/ServiceSummary';
+import ServiceIntroduce from '../components/ServiceIntroduce';
+import ServiceSummaryImage from '../components/ServiceSummaryImage';
 
 
 class MainPage extends React.Component{
@@ -137,6 +141,35 @@ class MainPage extends React.Component{
                   >
                     {/* <Calendar event_data={event_data} check_state={check_state}></Calendar> */}
                     {/* <DemoApp ref={this.calendarRef} ></DemoApp> */}
+
+                    <Row className="justify-content-center ml-0 mr-0 p-0 mb-5">
+                      <Col xs="12" md="6" className='jobFrame'>
+                        <h1>직군 선택</h1>
+                        <Row className="justify-content-center">
+                          <CategoryJobGroup></CategoryJobGroup>
+                        </Row>
+                      </Col>
+
+                      <Col xs="12" md="6" className='informFrame'>
+                        <h1>정보 선택</h1>
+                        <Row className="justify-content-center">
+                            {
+                            inform_list.map((inform)=>(
+                                <Col xs="3">
+                                  <article className={'informGroup'}>
+                                  <input 
+                                  type="checkbox" id={inform.id} 
+                                  name="radios" value={inform.id} onChange={onChange}/>
+                                  <div>
+                                      <span>{inform.name}</span>
+                                  </div>
+                                  </article>
+                                </Col>
+                            ))
+                            }
+                        </Row>
+                      </Col>
+                    </Row>
                     <Row>
                       <Col xs="12">
                       <div className='calendar'>
@@ -169,37 +202,11 @@ class MainPage extends React.Component{
                       </div>
                       </Col>
                     </Row>
-
-
-                    <Row className="justify-content-center ml-0 mr-0 p-0 mt-5">
-                      <Col xs="12" md="6" className='jobFrame'>
-                        <h1>직군 선택</h1>
-                        <Row className="justify-content-center">
-                          <CategoryJobGroup></CategoryJobGroup>
-                        </Row>
-                      </Col>
-
-                      <Col xs="12" md="6" className='informFrame'>
-                        <h1>정보 선택</h1>
-                        <Row className="justify-content-center">
-                            {
-                            inform_list.map((inform)=>(
-                                <Col xs="3">
-                                  <article className={'informGroup'}>
-                                  <input 
-                                  type="checkbox" id={inform.id} 
-                                  name="radios" value={inform.id} onChange={onChange}/>
-                                  <div>
-                                      <span>{inform.name}</span>
-                                  </div>
-                                  </article>
-                                </Col>
-                            ))
-                            }
-                        </Row>
+                    <Row>
+                      <Col xs="12">
+                        <CalendarNote></CalendarNote>
                       </Col>
                     </Row>
-                    
   
                     {/* <CalendarModule></CalendarModule> */}
               
@@ -250,18 +257,30 @@ class MainPage extends React.Component{
   
             {/* <Section> */}
               <div className='section2'>
-                <div className='cropped'>
+                {/* <div className='cropped'>
                   <img src='images/page0.svg' className='pages'></img>
-                </div>
+                </div> */}
+                <ServiceSummary></ServiceSummary>
+              </div>
+              <div className='section2 summary-image-frame'>
+                  <ServiceSummaryImage></ServiceSummaryImage>
               </div>
               <div className='section2 page1-frame'>
-                  <div className='cropped'>
+                  {/* <div className='cropped'>
                     <img src='images/page1.svg' className='pages'></img>
+                  </div> */}
+                  <div className='box'>
+                    <ServiceIntroduce></ServiceIntroduce>
                   </div>
               </div>
               <div className='section2 page2-frame'>
                   <div className='cropped'>
-                    <img src='images/page2.svg' className='pages'></img>
+                    <div className=''>
+                      <img src='images/page_.png' className='pages'></img>
+                      <h1 className=''>우리를 필요로 하는 당신을 위해</h1>
+                      <h1 className=''>스타트업 일정 캘린더에 관심있는 모든 분들을 위해 하단에 정보를 입력해주시면</h1>
+                      <h1 className=''>지금 바로 저희 silinder가 준비한 세가지 선물을 풀어보실 수 있습니다.</h1>
+                    </div>
                   </div>
 
               {/* <motion.div
