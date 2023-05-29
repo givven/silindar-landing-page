@@ -5,7 +5,7 @@ import './MainPage.css';
 import Category from '../components/Category';
 import Contact from '../components/Contact';
 
-import { motion } from "framer-motion"
+import { color, motion } from "framer-motion"
 import Title from '../components/Title';
 import Calendar from '../components/Calendar';
 import CategoryJobGroup from '../components/CategoryJobGroup';
@@ -30,6 +30,7 @@ import CalendarNote from '../components/CalendarNote';
 import ServiceSummary from '../components/ServiceSummary';
 import ServiceIntroduce from '../components/ServiceIntroduce';
 import ServiceSummaryImage from '../components/ServiceSummaryImage';
+import ContactInformation from '../components/ContactInformation';
 
 
 class MainPage extends React.Component{
@@ -116,7 +117,7 @@ class MainPage extends React.Component{
                     whileInView={{
                       opacity: 1, 
                       scale: 1,
-                      transition:{ duration: 1.5},
+                      transition:{ duration: 1.8},
                       x: 0
                     }}
                   >
@@ -269,70 +270,31 @@ class MainPage extends React.Component{
                   {/* <div className='cropped'>
                     <img src='images/page1.svg' className='pages'></img>
                   </div> */}
-                  <div className='box'>
                     <ServiceIntroduce></ServiceIntroduce>
-                  </div>
+
+              </div>
+              <div className='section2'>
+                <div className='serviceIntroduceGradient' style={{
+                  width: "100%",
+                  background: "linear-gradient(to top, #343D07, rgba(23, 23, 23, 0))",
+                  height: "500px",
+                  marginTop: "-500px",
+                  color: '#D6FF01'
+                }}></div>
               </div>
               <div className='section2 page2-frame'>
-                  <div className='cropped'>
-                    <div className=''>
-                      <img src='images/page_.png' className='pages'></img>
-                      <h1 className=''>우리를 필요로 하는 당신을 위해</h1>
-                      <h1 className=''>스타트업 일정 캘린더에 관심있는 모든 분들을 위해 하단에 정보를 입력해주시면</h1>
-                      <h1 className=''>지금 바로 저희 silinder가 준비한 세가지 선물을 풀어보실 수 있습니다.</h1>
-                    </div>
-                  </div>
+                  <Contact></Contact>
 
-              {/* <motion.div
-                  className="box page-section"
-                  initial={{ opacity: 0, scale: 0 }}
-                  transition={{ duration: 1.5 }}
-                  whileInView={{
-                    opacity: 1,
-                    scale: 1,
-                  }}
-              >
-                <Row>
-                  <Col xs="12">
-                    <img src='images/page4.svg' className='pages'></img>
-                  </Col>
-                </Row>
-              </motion.div> */}
+              </div>
 
-              
+              <div className='section2 page3-frame'>
+                  <ContactInformation></ContactInformation>
               </div>
             {/* </Section> */}
 
 
             {/* <Section> */}
-            <div className='section3'>
-              <div className='cropped'>
-                  <img src='images/page4.svg' className='pages'></img>
-              </div>
-
-              {/* <motion.div
-                  className="box page-section"
-                  initial={{ opacity: 0, scale: 0 }}
-                  transition={{ duration: 1.5 }}
-                  whileInView={{
-                    opacity: 1,
-                    scale: 1,
-                  }}
-              >
-                <Row>
-                  <Col xs="12">
-                    <img src='images/page4.svg' className='pages'></img>
-                  </Col>
-                </Row>
-              </motion.div> */}
-
-              
-            </div>
-            {/* </Section> */}
-
-
-            {/* <Section> */}
-            <div className='section4'>
+            {/* <div className='section4'>
               <motion.div
                   className="box page-section"
                   initial={{ opacity: 0, scale: 0 }}
@@ -348,7 +310,7 @@ class MainPage extends React.Component{
                   </Col>
                 </Row>
               </motion.div>
-            </div>
+            </div> */}
             {/* </Section> */}
 
 

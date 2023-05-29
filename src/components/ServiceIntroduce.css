@@ -65,7 +65,7 @@
     height: 100px;
 } */
 
-.teamBuildingGroup{
+.greenHoverButton{
   width: 260px;
   height: 44px;
   box-sizing: border-box;
@@ -79,7 +79,7 @@
   margin-bottom: 5px;
 }
 
-.teamBuildingGroup>div{
+.greenHoverButton>div{
     width: 100%;
     height: 100%;
     display: flex;
@@ -92,7 +92,7 @@
     font-weight: 500;
 }
 
-.teamBuildingGroup input {
+.greenHoverButton input {
     position: absolute;
     top: 0;
     left: 0;
@@ -103,8 +103,72 @@
     margin: 0px;
 }
 
+.bottom-20{
+    margin-bottom: 11px;
+}
+.bottom-63{
+    margin-bottom: 63px;
+}
 
-.teamBuildingGroup input[type=button]:hover ~ div {
+
+.greenHoverButton input[type=button]:hover ~ div {
     background: linear-gradient(180deg, #D6FF01 0%, #F5EA18 100%);
     color: #141414;
+}
+
+.schedule_report{
+    width: 198px;
+}
+
+.button-col{
+    padding-top: 9px;
+}
+
+.service_introduce_recommend{
+    margin-top: 490px;
+}
+
+.service_introduce_recommend h1{
+    font-weight: 700;
+    font-family: Pretendard;
+    font-size: 24px;
+    margin-bottom: 39px;
+}
+
+.service_introduce_recommend img{
+    width: 340px;
+    height: 157px;
+}
+
+.service_introduce_recommend .t1{
+    margin-top: 15px;
+    font-weight: 500;
+    font-family: Pretendard;
+    font-size: 16px
+}
+
+.lineGraient{
+    border-width: 0.5px;
+    border-style: solid;
+    border-image: 
+        linear-gradient(
+        to top, 
+        #D6FF01, 
+        rgba(0, 0, 0, 0)
+        ) 1 100%;
+    height:352px;
+    left: 50%;
+    position: absolute; 
+}
+
+.lineGraientCircle{
+    background: #D6FF01;
+    box-shadow: 0px 0px 4px #D6FF01, 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 10px;
+    height: 10px;
+    margin-top: 352px;
+    left: calc(50% - 10px/2 + 0.5px);
+    position: absolute;
+    border-radius: 90px 90px 90px 90px;
+
 }
