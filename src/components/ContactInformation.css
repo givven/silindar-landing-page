@@ -135,6 +135,10 @@
     font-size: 12px;
 }
 
+#contact_content h1{
+    text-align: left;
+}
+
 #contact_content textarea{
     background: #202020;
     border: 1px solid #6F6F6F;

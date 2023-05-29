@@ -105,8 +105,17 @@ class MainPage extends React.Component{
         {/* <SectionsContainer className="container" {...options}> */}
             {/* <Section> */}
               <div className='section0'>
+                <div className='d-none d-sm-block'>
                 <div className='section0__cropped'>
                   <img src='images/title.svg' className='section0__pages'></img>
+                </div>
+                </div>
+              </div>
+              <div className='section0 mobile'>
+                <div className='d-block d-sm-none'>
+                  <div>
+                    <img src='images/mobile_image.png' className='section0__pages'></img>
+                  </div>
                 </div>
               </div>
               <div className='section1'>
@@ -171,6 +180,21 @@ class MainPage extends React.Component{
                         </Row>
                       </Col>
                     </Row>
+                    
+                    <div className='category_type'>
+                      <div className='confer_category_label category_label'>
+                        <div></div>
+                        <h1>컨퍼런스</h1>
+                      </div>
+                      <div className='mento_category_label category_label'>
+                        <div></div>
+                        <h1>멘토링</h1>
+                      </div>
+                      <div className='study_category_label category_label'>
+                        <div></div>
+                        <h1>스터디</h1>
+                      </div>
+                    </div>
                     <Row>
                       <Col xs="12">
                       <div className='calendar'>
@@ -288,7 +312,17 @@ class MainPage extends React.Component{
               </div>
 
               <div className='section2 page3-frame'>
-                  <ContactInformation></ContactInformation>
+                <motion.div 
+                      initial={{ opacity: 0, y: 200}}
+                      whileInView={{
+                        opacity: 1, 
+                        scale: 1,
+                        transition:{ delay: 0, duration: 1},
+                        y: 0
+                      }}
+                  >
+                    <ContactInformation></ContactInformation>
+                  </motion.div>
               </div>
             {/* </Section> */}
 

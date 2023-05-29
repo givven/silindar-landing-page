@@ -19,8 +19,16 @@
     background-color: #3D3D3D;
 }
 
-.fc-day-sun{
-    color: red;
+
+.fc .fc-daygrid-day-number{
+    color: rgba(255, 255, 255, 0.5);;
+}
+
+.fc-day-sun {
+    color:#FF8E8E;
+}
+.fc-day-sat {
+    color: #8B8B8B;
 }
 
 .fc-day-today>div{

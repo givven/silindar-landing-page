@@ -46,6 +46,7 @@ margin-bottom: 109px;
     align-items: center;
     height: 100%;
     color: #ffffff;
+    /* padding: 0px 10px; */
 }
 
 .section3{
@@ -182,4 +183,38 @@ body{
 .component-center{
     display: flex;
     justify-content: center;
+}
+
+
+.category_type{
+    padding: 0px 15px;
+    display: flex;
+    margin-bottom: 21px;
+}
+.category_type .category_label{
+    width: 111px;
+    display: flex;
+}
+
+.category_label > h1{
+    display: inline;
+    padding-left: 7px;
+}
+
+.confer_category_label > div{
+    width: 20px;
+    height: 20px;
+    background-color: #6B2B2B;
+}
+
+.mento_category_label > div{
+    width: 20px;
+    height: 20px;
+    background-color: #0A6A71;
+}
+.study_category_label > div{
+    width: 20px;
+    height: 20px;
+    margin-left: -15px;
+    background-color: #4F5C0B;
 }

@@ -4,10 +4,14 @@ import './ServiceIntroduce.css'
 
 export default function ServiceIntroduce(){
     const team_building_list = [
+        {id:'col'},
         {id:'team_building_youth', name:'청소년 예비창업가 팀빌딩 하러가기'},
         {id:'team_building_startup',name:'청년 예비창업가 팀빌딩 하러가기'},
+        {id:'col'},
+        {id:'col'},
         {id:'team_building_office',name:'직장인 예비창업가 팀빌딩 하러가기'},
         {id:'team_building_startup',name:'초기스타트업 경력자 팀빌딩 하러가기'},
+        {id:'col'},
     ];
 
     function handleClick(e){
@@ -26,19 +30,18 @@ export default function ServiceIntroduce(){
                     <h1 className='service_introduce_order'>01</h1>
                     <h1 className='service_introduce_title'>직군 별 맞춤 일정</h1>
                     <h1 className='service_introduce_content'>실린더는 기획자, 디자이너, 개발자 등 직군에 알맞는 정보를 제공합니다.</h1>
-                    <h1 className='service_introduce_content'>정부지원사업 일정부터 멘토링 스터디, 컨퍼런스, 네트워킹파티 일정을 확인해보세요.</h1>
+                    <h1 className='service_introduce_content'>누구나 도전 가능한 창업지원 공모전 일정부터 멘토링 스터디, 컨퍼런스, 네트워킹파티 일정을 확인해보세요.</h1>
 
                     <h1 className='service_introduce_order'>02</h1>
                     <h1 className='service_introduce_title'>공모전 별 팀빌딩</h1>
-                    <h1 className='service_introduce_content'>실린더는 기획자, 디자이너, 개발자, 예비 창업가 등 관심분야에 알맞는 정보를 제공합니다.</h1>
-                    <h1 className='service_introduce_content bottom-20'>누구나 도전 가능한 창업지원 공모전 일정부터 멘토링 스터디, 컨퍼런스, 네트워킹파티 일정을 확인해보세요.</h1>
+                    <h1 className='service_introduce_content'>실린더가 제공하는 창업 공모전 정보는 '누구나' 도전 가능합니다.</h1>
+                    <h1 className='service_introduce_content bottom-20'>팀 빌딩이 필요하다면 아래 링크를 통해 들어와 이야기를 나누어보세요.</h1>
                     <Row className="justify-content-md-center">
                     {
                         team_building_list.map((team_building)=>(
-                        <Col xs="12" md="5" className='button-col'>
-                            {
-                                team_building.id !== ""
-                                ?
+                            team_building.id !== "col"
+                            ?
+                            <Col xs="12" md="4" lg="3" className='button-col'>
                                 <article className={'greenHoverButton'}>
                                     <input 
                                     type="button" id={team_building.id} 
@@ -47,17 +50,16 @@ export default function ServiceIntroduce(){
                                         <span>{team_building.name}</span>
                                     </div>
                                 </article>
-                                :null
-                            }
-                        </Col>
+                            </Col>
+                            :<Col xs="0" md="2" lg="3"></Col>
                         ))
                     }
                     </Row>
 
                     <h1 className='service_introduce_order'>03</h1>
                     <h1 className='service_introduce_title'>엄선된 일정</h1>
-                    <h1 className='service_introduce_content'>실린더는 기획자, 디자이너, 개발자 등 직군에 알맞는 정보를 제공합니다.</h1>
-                    <h1 className='service_introduce_content bottom-20'>정부지원사업 일정부터 멘토링 스터디, 컨퍼런스, 네트워킹파티 일정을 확인해보세요.</h1>
+                    <h1 className='service_introduce_content'>유용한 컨퍼런스와 스터디 일정을 사람들과 공유하세요.</h1>
+                    <h1 className='service_introduce_content bottom-20'>실린더의 MD를 통해 검수 후 모두에게 알려드릴게요.</h1>
                     <article className='greenHoverButton schedule_report'>
                         <input type="button" onClick={handleClick}/>
                         <div>
