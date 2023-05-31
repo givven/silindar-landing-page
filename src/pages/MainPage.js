@@ -31,6 +31,7 @@ import ServiceSummary from '../components/ServiceSummary';
 import ServiceIntroduce from '../components/ServiceIntroduce';
 import ServiceSummaryImage from '../components/ServiceSummaryImage';
 import ContactInformation from '../components/ContactInformation';
+import MobileNavbar from '../components/MobileNavbar';
 
 
 class MainPage extends React.Component{
@@ -102,6 +103,7 @@ class MainPage extends React.Component{
     const DAY_NAMES = ['일','월','화','수','목','금','토',];
     return (
       <div>
+        <MobileNavbar></MobileNavbar>
         {/* <SectionsContainer className="container" {...options}> */}
             {/* <Section> */}
               <div className='section0'>
@@ -114,12 +116,13 @@ class MainPage extends React.Component{
               <div className='section0 mobile'>
                 <div className='d-block d-sm-none'>
                   <div>
-                    <img src='images/mobile_image.png' className='section0__pages'></img>
+                    <img src='images/mobile_image.png' className='section0__pages' width={"100%"}></img>
                   </div>
                 </div>
               </div>
+
+              <div className='d-none d-sm-block'>
               <div className='section1'>
-                
                 <div className='box'>
                   <motion.div
                     initial={{ opacity: 0, x: -200}}
@@ -278,6 +281,7 @@ class MainPage extends React.Component{
                   </motion.div>
                 </div>
               </div>
+            </div>
             {/* </Section> */}
   
             {/* <Section> */}

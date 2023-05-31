@@ -27,17 +27,16 @@ align-items: center;
 height: 100%;
 color: #ffffff;
 
-margin-bottom: 50px;
 }
 
 .section1{
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100%;
-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #ffffff;
 
-margin-bottom: 109px;
+    margin-bottom: 109px;
 }
 
 .section2{
@@ -172,7 +171,7 @@ color: #ffffff;
 }
 
 body{
-    background-color: #000000;
+    background-color: #171717;
 }
 
 .row{

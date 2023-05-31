@@ -3,16 +3,11 @@
 }
 .page3-frame{
     background-color: #0D0D0D;
+    /* margin-bottom: 180px; */
+}
+.popup_bottom{
     margin-bottom: 180px;
 }
-
-#contact_popup{
-    /* width: 828px; */
-
-    /* height: 541px; */
-
-}
-
 .popup_size{
     background: linear-gradient(180deg, #3F3F3F 0%, #171717 100%);
     box-sizing: border-box;
@@ -21,10 +16,10 @@
 
     max-width: 828px;
     min-width: 200px;
-    padding: 0px 86px;
+    /* padding: 0px 86px; */
 }
 
-#contact_popup .title{
+.contact_popup .title{
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 700;
@@ -36,7 +31,7 @@
     margin-bottom: 27px;
 }
 
-#contact_popup .sub_title{
+.contact_popup .sub_title{
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 500;
@@ -47,7 +42,11 @@
     color: #FFFFFF;
 }
 
-#contact_popup .caution{
+.popup_padding_sizing{
+    padding: 0px 86px;
+}
+
+.contact_popup .caution{
     text-align: left;
     font-family: 'Pretendard';
     font-style: normal;
@@ -142,7 +141,8 @@
 #contact_content textarea{
     background: #202020;
     border: 1px solid #6F6F6F;
-    width: 342px;
+    max-width: 342px;
+    width: 100%;
     height: 88px;
     resize: none;
     margin-top: 8px;
@@ -161,6 +161,7 @@
     background: #202020;
     border: 1px solid #6F6F6F;
     color: #ffffff;
+    padding-left: 10px;
 }
 
 #contact_number_email{
@@ -171,8 +172,96 @@
     border: 1px solid #6F6F6F;
     color: #ffffff;
     font-size: 12px;
+    padding-left: 10px;
 }
 
-#contact_content > input[type="text"]{
+.contact_content > input[type="text"]{
     text-align: center;
+}
+
+.popup_mobile_bottom{
+    margin-bottom: 100px;
+}
+
+.mobile #contact_name{
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.mobile #contact_number_email{
+    margin-top: 11px;
+    width: 100%;
+    margin-left: 0px;
+    text-align: center;
+}
+
+.mobile #content_textarea{
+    margin-top: 11px;
+}
+
+.sub_title .mobile{
+    color: #646464;
+}
+
+.contact_popup_mobile > div >.sub_title{
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 150%;  
+    letter-spacing: -0.6px;
+    color:#646464;
+    margin-bottom: 30px;
+}
+
+#contact_user_mobile{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 290px;
+}
+
+.contact_user_second{
+    display: flex;
+    justify-content: right;
+    width: 290px;
+}
+
+.contact_user_second #pre_startup_user{
+    margin-left: 30px;
+}
+
+#contact_information_mobile{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-top: 42px;
+    width: 290px;
+}
+
+#contact_information_mobile #idea_information{
+    margin-left: 20px;
+}
+
+.contact_information_second{
+    display: flex;
+    justify-content: right;
+    width: 290px;
+    margin-bottom: 38px;
+}
+
+.contact_information_second #other_information{
+    margin-left: 60px;
+}
+
+.popup_size_mobile{
+    /* background: linear-gradient(180deg, #3F3F3F 0%, #171717 100%); */
+    box-sizing: border-box;
+    /* border: 1px solid #6F6F6F; */
+    border-radius: 5px;
+
+    max-width: 828px;
+    min-width: 200px;
+    /* padding: 0px 86px; */
 }

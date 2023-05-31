@@ -1,0 +1,13 @@
+.mobile-navbar{
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+    height: 90px;
+    background-color: #171717;
+}
+
+.mobile-navbar img{
+    width: 128px;
+    padding-top: 50px;
+    padding-left: 18px;
+}

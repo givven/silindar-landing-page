@@ -27,7 +27,7 @@
 }
 
 #service_introduce .service_introduce_title{
-    font-size: 24px;
+    font-size: min(5.6vw, 24px);
     color: #ffffff;
     font-weight: 700;
     margin-bottom: 13px;
@@ -35,12 +35,13 @@
 }
 
 #service_introduce .service_introduce_content{
-    font-size: 16px;
+    font-size: min(3.5vw, 16px);
     color: #EFEFEF;
     font-weight: 500;
 
     font-family: Pretendard;
     line-height: 24px;
+    letter-spacing: -0.6px;
 }
 
 .service_introduce_circle{
@@ -124,9 +125,9 @@
     padding-top: 9px;
 }
 
-.service_introduce_recommend{
+/* .service_introduce_recommend{
     margin-top: 490px;
-}
+} */
 
 .service_introduce_recommend h1{
     font-weight: 700;
@@ -147,7 +148,7 @@
     font-size: 16px
 }
 
-.lineGraient{
+.lineGradient{
     border-width: 0.5px;
     border-style: solid;
     border-image: 
@@ -161,7 +162,7 @@
     position: absolute; 
 }
 
-.lineGraientCircle{
+.lineGradientCircle{
     background: #D6FF01;
     box-shadow: 0px 0px 4px #D6FF01, 0px 4px 4px rgba(0, 0, 0, 0.25);
     width: 10px;
@@ -170,5 +171,41 @@
     left: calc(50% - 10px/2 + 0.5px);
     position: absolute;
     border-radius: 90px 90px 90px 90px;
+}
+.lineGradientGap{
+    margin-bottom: 490px
+}
 
+.mobile_lineGradient{
+    height: 180px;
+}
+.mobile_lineGradientCircle{
+    margin-top: 180px;
+}
+.mobile_lineGradientGap{
+    margin-bottom: 300px
+}
+
+.mobile-introduce-image{
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.mobile-introduce-image > div{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    top: 30%;
+    width: 100%;
+}
+
+.mobile-introduce-image > div > .t1-mobile{
+    font-weight: 500;
+    font-family: Pretendard;
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
+.mobile-introduce-image > .one_h1{
+    top: 40%;
 }

@@ -18,6 +18,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 700;
   line-height: 25px;
   transition: .5s ease;
   border-radius: 70px;
