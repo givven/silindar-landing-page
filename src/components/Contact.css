@@ -19,7 +19,7 @@
     margin-top: -400px;
     margin-bottom: 22px;
     /* max-width: 438px;*/
-    min-width: 300px;
+    min-width: min(100vw,300px);
 }
 .sub-title{
     font-family: 'Pretendard';

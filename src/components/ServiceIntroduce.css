@@ -67,7 +67,7 @@
 } */
 
 .greenHoverButton{
-  width: 260px;
+  width: min(80vw,260px);
   height: 44px;
   box-sizing: border-box;
   position: relative;
@@ -89,7 +89,7 @@
     line-height: 25px;
     transition: .5s ease;
     border-radius: 70px;
-    font-size: 16px;
+    font-size: min(5vw,16px);
     font-weight: 500;
 }
 
@@ -137,7 +137,7 @@
 }
 
 .service_introduce_recommend img{
-    width: 340px;
+    width: min(80vw,340px);
     height: 157px;
 }
 

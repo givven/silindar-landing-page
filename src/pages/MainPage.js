@@ -109,7 +109,16 @@ class MainPage extends React.Component{
               <div className='section0'>
                 <div className='d-none d-sm-block'>
                 <div className='section0__cropped'>
-                  <img src='images/title.svg' className='section0__pages'></img>
+                  <img src='images/title.svg' className='section0__pages'>
+                    {/* <img src='images/title_name.png'></img> */}
+                  </img>
+                  <div className='main_vanner'>
+                    <h1 className='t1'>실리콘밸리를 향한</h1>
+                    <div>
+                      <h1 className='t1'>초기 스타트업 캘린더, </h1>
+                      <img src='images/title_logo.png'></img>
+                    </div>
+                  </div>
                 </div>
                 </div>
               </div>

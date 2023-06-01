@@ -100,7 +100,7 @@
     outline: none !important;
     border: 1px solid #6F6F6F;
     border-radius: 2px; */
-    background: #FFFFFF;
+    background: #D6FF01;
 }
 
 .form_input{
@@ -219,13 +219,13 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
-    width: 290px;
+    width: min(83vw,290px);
 }
 
 .contact_user_second{
     display: flex;
     justify-content: right;
-    width: 290px;
+    width: min(83vw,290px);
 }
 
 .contact_user_second #pre_startup_user{
@@ -237,7 +237,7 @@
     justify-content: space-between;
     margin-bottom: 20px;
     margin-top: 42px;
-    width: 290px;
+    width: min(83vw,290px);
 }
 
 #contact_information_mobile #idea_information{
@@ -247,7 +247,7 @@
 .contact_information_second{
     display: flex;
     justify-content: right;
-    width: 290px;
+    width: min(83vw,290px);
     margin-bottom: 38px;
 }
 

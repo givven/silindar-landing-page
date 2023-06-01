@@ -135,7 +135,7 @@ export default function ServiceIntroduce(){
                                 </div>
                                 <div className='d-block d-sm-none'>
                                     <div className='mobile-introduce-image'>
-                                        <img src='images/recommend_1.png' ></img>
+                                        <img src='images/recommend_1_mobile.png' ></img>
                                         <div>
                                             <h1 className='t1-mobile'>창업을 어떻게</h1>
                                             <h1 className='t1-mobile'>시작해야할 지 막막했던 분</h1>
@@ -150,7 +150,7 @@ export default function ServiceIntroduce(){
                                 </div>
                                 <div className='d-block d-sm-none'>
                                     <div className='mobile-introduce-image'>
-                                        <img src='images/recommend_2.png'></img>
+                                        <img src='images/recommend_2_mobile.png'></img>
                                         <div>
                                             <h1 className='t1-mobile'>전문적인 스타트업</h1>
                                             <h1 className='t1-mobile'>맞춤 멘토링/과외가 필요한 분</h1>
@@ -165,7 +165,7 @@ export default function ServiceIntroduce(){
                                 </div>
                                 <div className='d-block d-sm-none'>
                                     <div className='mobile-introduce-image '>
-                                        <img src='images/recommend_3.png'></img>
+                                        <img src='images/recommend_3_mobile.png'></img>
                                         <div className='one_h1'>
                                             <h1 className='t1-mobile'>업계 사람들과 네트워크를 쌓고 싶은 분</h1>
                                         </div>
