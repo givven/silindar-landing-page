@@ -7,7 +7,7 @@ import MainPage from './pages/MainPage';
 import BootstrapFrame from './pages/BootstrapFrame';
 import DemoApp from './components/DemoApp';
 // import "bootstrap/dist/css/bootstrap.min.css";
-
+import Dropdown from './components/Dropdown'
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
     // <CheckBox name={"기획자"} id={"plan"}></CheckBox>
     // <BootstrapFrame></BootstrapFrame>
     // <DemoApp></DemoApp>
+    // <Dropdown></Dropdown>
   );
 }
 

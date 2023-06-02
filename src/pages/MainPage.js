@@ -1,7 +1,7 @@
 import './reset.css'
-import './MainPage.css';
-// import {SectionsContainer, Section} from 'react-fullpage';
 
+// import {SectionsContainer, Section} from 'react-fullpage';
+import './MainPage.css';
 import Category from '../components/Category';
 import Contact from '../components/Contact';
 
@@ -32,10 +32,48 @@ import ServiceIntroduce from '../components/ServiceIntroduce';
 import ServiceSummaryImage from '../components/ServiceSummaryImage';
 import ContactInformation from '../components/ContactInformation';
 import MobileNavbar from '../components/MobileNavbar';
+import { Alert } from '@mui/material';
+import CalendarPopup from '../components/CalendarPopup';
 
 
 class MainPage extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      modalOpen: false,
+      scrollPosition: 0
+    }
+  }
   calendarRef = React.createRef();
+
+  
+
+  openModal = () => {
+    console.log("Hello man")
+    const body = document.querySelector('body');
+
+    let current_position = window.pageYOffset
+    this.setState({ modalOpen: true })
+    this.setState({ scrollPosition: current_position })
+
+    body.style.overflow = 'hidden';
+    body.style.position = 'fixed';
+    
+    body.style.top = `-${current_position}px`;
+    body.style.width = '100%'
+  }
+
+  closeModal = () => {
+    console.log("close man")
+    this.setState({ modalOpen: false});
+
+    const body = document.querySelector('body');
+    body.style.removeProperty('overflow');
+    body.style.removeProperty('position');
+    body.style.removeProperty('top');
+    body.style.removeProperty('width');
+    window.scrollTo(0, this.state.scrollPosition);
+  }
 
   render(){
     let options = {
@@ -101,9 +139,22 @@ class MainPage extends React.Component{
 
     };  
     const DAY_NAMES = ['일','월','화','수','목','금','토',];
+
+    const dropdown_options = [
+      { label: '기획', value: 'plan' },
+      { label: '디자인', value: 'design' },
+      { label: '개발', value: 'dev' },
+      { label: '마케팅', value: 'market' },
+      { label: '예비창업가', value: 'startup' }
+    ];
+    
+    console.log("유진 초이다",this.state.modalOpen);
+
     return (
       <div>
-        <MobileNavbar></MobileNavbar>
+        <MobileNavbar></MobileNavbar>å
+        <button onClick={this.openModal}>모달팝업</button>
+        <CalendarPopup open={this.state.modalOpen} close={this.closeModal} header="2023 ICT 콤플렉스 세미나"></CalendarPopup>
         {/* <SectionsContainer className="container" {...options}> */}
             {/* <Section> */}
               <div className='section0'>
@@ -163,6 +214,17 @@ class MainPage extends React.Component{
                   >
                     {/* <Calendar event_data={event_data} check_state={check_state}></Calendar> */}
                     {/* <DemoApp ref={this.calendarRef} ></DemoApp> */}
+
+                    <Row className="justify-content-center">
+
+                      <Col xs="5" className="dropdown-center">
+                        
+                      </Col>
+                      <Col xs="5" className="dropdown-center">
+                        
+                      </Col>
+                    </Row>
+                    
 
                     <Row className="justify-content-center ml-0 mr-0 p-0 mb-5">
                       <Col xs="12" md="6" className='jobFrame'>
@@ -402,9 +464,17 @@ class MainPage extends React.Component{
   }
 
   handleEventClick = (clickInfo) => {
-    if (window(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
-      clickInfo.event.remove() // will render immediately. will call handleEventRemove
-    }
+    // if (window(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
+    //   clickInfo.event.remove() // will render immediately. will call handleEventRemove
+    // }
+  
+    // alert('Event: ' + clickInfo.event.title);
+    // alert('Coordinates: ' + clickInfo.jsEvent.pageX + ',' + clickInfo.jsEvent.pageY);
+    // alert('View: ' + clickInfo.view.type);
+    // var myWindow = window.open("", "_self");
+    // myWindow.document.write("<p>I replaced the current window.</p>");
+
+    this.openModal()
   }
 
   // handlers that initiate reads/writes via the 'action' props

@@ -1,0 +1,151 @@
+.modal {
+    display: none;
+    position: fixed;
+    overflow-y: scroll; 
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.6);
+    overflow-y: scroll;
+    width: 100%;
+}
+
+.modal button {
+    outline: none;
+    cursor: pointer;
+    border: 0;
+}
+.modal > section {
+    width: 90%;
+    max-width: 716px;
+    height: 355px;
+    margin: 0 auto;
+
+    color: #ffffff;
+    background: rgba(36, 36, 36, 0.7);
+    border: 1px solid #6F6F6F;
+    box-shadow: 0px 8px 11px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(20px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 5px;
+
+
+    /* 팝업이 열릴때 스르륵 열리는 효과 */
+    animation: modal-show 0.3s;
+
+}
+.modal > section > header {
+    position: relative;
+    padding: 16px 64px 16px 16px;
+    /* background-color: #f1f1f1; */
+    font-weight: 700;
+}
+.modal > section > header > .t1{
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 150%;
+    letter-spacing: -0.6px;
+}
+.modal > section > header > .t2{
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: -0.6px;
+}
+.modal > section > header > .t3{
+    padding-top: 8px;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 8px;
+    line-height: 150%;
+    letter-spacing: -0.6px;
+    color: #A5A5A5;
+}
+
+.modal > section > header button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    font-size: 21px;
+    font-weight: 700;
+    text-align: center;
+    color: #999;
+    background-color: transparent;
+}
+
+
+.modal > section > main {
+    padding: 16px;
+    /* border-bottom: 1px solid #dee2e6; */
+    /* border-top: 1px solid #dee2e6; */
+}
+.modal > section > main > .content_name{
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 150%;
+    letter-spacing: -0.6px;
+    color: #FFFFFF;
+}
+.modal > section > main > .content{
+    padding-top: 8px;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 150%;
+    letter-spacing: -0.6px;
+    color: #C1C1C1;
+    max-width: 500px;
+}
+
+
+
+.modal > section > footer {
+    padding: 12px 16px;
+    text-align: right;
+}
+.modal > section > footer button {
+    padding: 6px 12px;
+    color: #fff;
+    background-color: #6c757d;
+    border-radius: 5px;
+    font-size: 13px;
+}
+.modal.openModal {
+    display: flex;
+    align-items: center;
+
+    /* 팝업이 열릴때 스르륵 열리는 효과 */
+    animation: modal-bg-show 0.3s;
+}
+
+
+@keyframes modal-show {
+    from {
+        opacity: 0;
+        margin-top: -50px;
+    }
+    to {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+@keyframes modal-bg-show {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
