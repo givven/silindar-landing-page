@@ -6,7 +6,6 @@ import { render } from '@testing-library/react';
 export default class CalendarPopup extends Component{
     render(){
         const { open, close, header } = this.props;
-        console.log("이 데이터 녀석이",open);
         return (
             <div className={open ? 'openModal modal' : 'modal'}>
               {open ? (

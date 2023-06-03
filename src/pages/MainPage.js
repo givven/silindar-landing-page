@@ -147,8 +147,7 @@ class MainPage extends React.Component{
       { label: '마케팅', value: 'market' },
       { label: '예비창업가', value: 'startup' }
     ];
-    
-    console.log("유진 초이다",this.state.modalOpen);
+
 
     return (
       <div>
@@ -388,16 +387,16 @@ class MainPage extends React.Component{
 
               <div className='section2 page3-frame'>
                 <motion.div 
-                      initial={{ opacity: 0, y: 200}}
-                      whileInView={{
-                        opacity: 1, 
-                        scale: 1,
-                        transition:{ delay: 0, duration: 1},
-                        y: 0
-                      }}
-                  >
-                    <ContactInformation></ContactInformation>
-                  </motion.div>
+                    initial={{ opacity: 0, y: 200}}
+                    whileInView={{
+                      opacity: 1, 
+                      scale: 1,
+                      transition:{ delay: 0, duration: 1},
+                      y: 0
+                    }}
+                >
+                  <ContactInformation></ContactInformation>
+                </motion.div>
               </div>
             {/* </Section> */}
 

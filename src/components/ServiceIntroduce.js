@@ -6,12 +6,12 @@ import { color, motion } from "framer-motion"
 export default function ServiceIntroduce(){
     const team_building_list = [
         {id:'col'},
-        {id:'team_building_youth', name:'청소년 예비창업가 팀빌딩 하러가기'},
-        {id:'team_building_startup',name:'청년 예비창업가 팀빌딩 하러가기'},
+        {id:'team_building_youth', name:'청소년 예비창업가 팀빌딩 하러가기',link:'https://open.kakao.com/o/g8Z7TLnf'},
+        {id:'team_building_startup',name:'대학생 예비창업가 팀빌딩 하러가기',link:'https://open.kakao.com/o/gXVAz5mf'},
         {id:'col'},
         {id:'col'},
-        {id:'team_building_office',name:'직장인 예비창업가 팀빌딩 하러가기'},
-        {id:'team_building_startup',name:'초기스타트업 경력자 팀빌딩 하러가기'},
+        {id:'team_building_office',name:'직장인 예비창업가 팀빌딩 하러가기',link:'https://open.kakao.com/o/g8RTLLnf'},
+        {id:'team_building_startup',name:'초기스타트업 경력자 팀빌딩 하러가기',link:'https://open.kakao.com/o/g3IJMLnf'},
         {id:'col'},
     ];
 
@@ -53,7 +53,7 @@ export default function ServiceIntroduce(){
                                 <article className={'greenHoverButton'}>
                                     <input 
                                     type="button" id={team_building.id} 
-                                    name="radios" value={team_building.id} onClick={handleClick}/>
+                                    name="radios" value={team_building.id} onClick={()=>{window.location.href = team_building.link}}/>
                                     <div>
                                         <span>{team_building.name}</span>
                                     </div>

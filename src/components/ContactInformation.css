@@ -1,6 +1,11 @@
-#contact_information{
+#contact_input{
     text-align: center;
 }
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #202020 inset;
+    -webkit-text-fill-color:#ffffff;
+}
+
 .page3-frame{
     background-color: #0D0D0D;
     /* margin-bottom: 180px; */
@@ -14,7 +19,7 @@
     border: 1px solid #6F6F6F;
     border-radius: 5px;
 
-    max-width: 828px;
+    max-width: 900px;
     min-width: 200px;
     /* padding: 0px 86px; */
 }
@@ -75,6 +80,11 @@
     justify-content: space-between;
     margin-bottom: 20px;
 }
+#contact_information #idea_information{
+    margin-left: 10px;
+}
+
+
 #contact_content{
     margin-bottom: 23px;
 }
@@ -175,7 +185,7 @@
     padding-left: 10px;
 }
 
-.contact_content > input[type="text"]{
+#contact_content > input[type="text"]{
     text-align: center;
 }
 
@@ -183,20 +193,33 @@
     margin-bottom: 100px;
 }
 
-.mobile #contact_name{
-    width: 100%;
+.mobile #contact_name_mobile{
+    font-size: 12px;
+    color: #ffffff;
     text-align: center;
+
+    width: 100%;
+    height: 28px;
     margin-top: 20px;
+    background: #202020;
+    border: 1px solid #6F6F6F;
 }
 
-.mobile #contact_number_email{
-    margin-top: 11px;
-    width: 100%;
+.mobile #contact_number_email_mobile{
     margin-left: 0px;
     text-align: center;
+
+    color: #ffffff;
+    font-size: 12px;
+
+    margin-top: 11px;
+    height: 28px;
+    width: 100%;
+    background: #202020;
+    border: 1px solid #6F6F6F;
 }
 
-.mobile #content_textarea{
+.mobile #content_textarea_mobile{
     margin-top: 11px;
 }
 
@@ -222,13 +245,13 @@
     width: min(83vw,290px);
 }
 
-.contact_user_second{
+#contact_user_second{
     display: flex;
     justify-content: right;
     width: min(83vw,290px);
 }
 
-.contact_user_second #pre_startup_user{
+#contact_user_second #pre_startup_user_mobile{
     margin-left: 30px;
 }
 
@@ -240,18 +263,18 @@
     width: min(83vw,290px);
 }
 
-#contact_information_mobile #idea_information{
+#contact_information_mobile #idea_information_mobile{
     margin-left: 20px;
 }
 
-.contact_information_second{
+#contact_information_second{
     display: flex;
     justify-content: right;
     width: min(83vw,290px);
     margin-bottom: 38px;
 }
 
-.contact_information_second #other_information{
+#contact_information_second #other_information_mobile{
     margin-left: 60px;
 }
 
@@ -264,4 +287,14 @@
     max-width: 828px;
     min-width: 200px;
     /* padding: 0px 86px; */
+}
+
+#alert-message{
+    margin-bottom: 15px;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;  
+    letter-spacing: -0.6px;
 }
