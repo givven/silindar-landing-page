@@ -42,13 +42,13 @@ const MenuProps = {
     }
 };
 
-const names = [
-  '기획',
-  '디자인',
-  '개발',
-  '마케팅',
-  '예비창업가',
-];
+// const names = [
+//   '기획',
+//   '디자인',
+//   '개발',
+//   '마케팅',
+//   '예비창업가',
+// ];
 
 function getStyles(name, personName, theme) {
   return {
@@ -59,24 +59,13 @@ function getStyles(name, personName, theme) {
   };
 }
 
-export default function MultipleSelect() {
+export default function MultipleSelect({data_list, class_name, title_name , personName, handleChange}) {
   const theme = useTheme();
-  const [personName, setPersonName] = React.useState([]);
-
-  const handleChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setPersonName(
-      // On autofill we get a stringified value.
-      typeof value === 'string' ? value.split(',') : value,
-    );
-  };
 
   return (
-    <div>
+    <div className={class_name}>
       <FormControl sx={{ m: 1, width: 200 }}>
-        <InputLabel id="demo-multiple-name-label">관심 분야</InputLabel>
+        <InputLabel id="demo-multiple-name-label">{title_name}</InputLabel>
         <Select
           labelId="demo-multiple-name-label"
           id="demo-multiple-name"
@@ -86,13 +75,13 @@ export default function MultipleSelect() {
           input={<OutlinedInput label="Name" />}
           MenuProps={MenuProps}
         >
-          {names.map((name) => (
+          {data_list.map((data) => (
             <MenuItem
-              key={name}
-              value={name}
-              style={getStyles(name, personName, theme)}
+              key={data.name}
+              value={data.value}
+              style={getStyles(data.name, personName, theme)}
             >
-              {name}
+              {data.name}
             </MenuItem>
           ))}
         </Select>

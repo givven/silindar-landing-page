@@ -1,26 +1,6 @@
 .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
     background-color: #141414;
 }
-
-
-
-
-.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
-    color: #D6FF01;
-}
-
-
-#demo-multiple-name-label {
-    color: #D6FF01;
-}
-
-.css-hfutr2-MuiSvgIcon-root-MuiSelect-icon > path{
-    fill: #D6FF01;
-}
-.css-bpeome-MuiSvgIcon-root-MuiSelect-icon > path{
-    fill: #D6FF01;
-}
-
 .css-1d3z3hw-MuiOutlinedInput-notchedOutline{
     border: 1px solid none;
 }
@@ -32,35 +12,54 @@
 #demo-multiple-name{
     border: 1px solid #6F6F6F;
 }
-
-.css-1d3z3hw-MuiOutlinedInput-notchedOutline{
-    border: 1px solid #D6FF01
-}
-
-
 .css-6hp17o-MuiList-root-MuiMenu-list{
     background-color: #141414;
     color: white;
 }
 
+
+.job_category_dropdown .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
+    color: #D6FF01;
+}
+
+.job_category_dropdown #demo-multiple-name-label {
+    color: #D6FF01;
+}
+
+.job_category_dropdown .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon > path{
+    fill: #D6FF01;
+}
+.job_category_dropdown .css-bpeome-MuiSvgIcon-root-MuiSelect-icon > path{
+    fill: #D6FF01;
+}
+
+
+
+.information_category_dropdown .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
+    color: #F5EA18;
+}
+
+.information_category_dropdown #demo-multiple-name-label {
+    color: #F5EA18;
+}
+
+.information_category_dropdown .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon > path{
+    fill: #F5EA18;
+}
+.information_category_dropdown .css-bpeome-MuiSvgIcon-root-MuiSelect-icon > path{
+    fill: #F5EA18;
+}
+
+.information_category_dropdown .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root{
+    color: #F5EA18;
+}
+
+
+
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline{
+    border: 1px solid #D6FF01
+}
+
 /* .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root.Mui-selected {
     background-color: rgba(214, 255, 1, 0.5);
 } */
-
-.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root.Mui-selected {
-    background-color: red;
-}
-
-
-
-.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root{
-    color: aqua;
-}
-
-.Mui-selected{
-    background-color: yellow;
-}
-
-.MuiSelect-multiple{
-    background-color: pink;
-}

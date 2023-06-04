@@ -139,6 +139,7 @@ input:-webkit-autofill {
     width: 104px;
     height: 30px;
     margin-bottom: 12px;
+    margin-top: 10px;
 }
 .contact_submit > div > span{
     font-size: 12px;
@@ -251,7 +252,7 @@ input:-webkit-autofill {
     width: min(83vw,290px);
 }
 
-#contact_user_second #pre_startup_user_mobile{
+#contact_user_second #prestartup_user_mobile{
     margin-left: 30px;
 }
 
@@ -289,8 +290,7 @@ input:-webkit-autofill {
     /* padding: 0px 86px; */
 }
 
-#alert-message{
-    margin-bottom: 15px;
+.alert-message{
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 400;

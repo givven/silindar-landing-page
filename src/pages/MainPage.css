@@ -227,9 +227,13 @@ body{
     left: 50%;
     transform: translate(-50%, 50%);
     top: 25%;
-    width: 100%;
     text-align: left;
-    padding-left: 25%;
+
+    /* width: 100%;
+    padding-left: 25%; */
+    /* --> */
+    width: 650px;
+    padding-right: 50px;
 }
 
 .main_vanner > .t1{
@@ -268,5 +272,22 @@ body{
     padding-left: 10px;
 }
 
+.calendar_box{
+    width: 90%;
+}
+
 
 /* Dropdown  */
+.category_dropdown{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.fc .fc-daygrid-day-top{
+    justify-content: center;
+}
+
+.fc .fc-day-other .fc-daygrid-day-top{
+    justify-content: center;
+}

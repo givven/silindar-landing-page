@@ -4,16 +4,16 @@ import './ServiceSummary.css'
 export default function ServiceSummary(){
     return (
         <div className='d-none d-sm-block'>
-            <div className='box'>
+            <div className='box summary_box'>
                 <div id='service_summary'>
 
                 <div className='component-center'>
                     <div className='service_summary_circle'></div>
                 </div>
-                <h1 className='t1'>Every startup's calendar for Silicon Valley</h1>
-                <h1 className='t2'>실리콘밸리를 향한 모든 스타트업의 캘린더</h1>
-                <h1 className='t3'>국내의 스타트업 종사자들을 위해 맞춤 일정으로 가득한 캘린더를 준비했습니다.</h1>
-                <h1 className='t4'>수도권에서 열리는 다양한 창업 인사이트를 실린더에서 만나보세요.</h1>
+                <h1 className='t1'>Every First step startup's PLATFORM for Silicon Valley</h1>
+                <h1 className='t2'>스타트업을 위한 멘토멘티 플랫폼</h1>
+                <h1 className='t3'>스타트업 멘토멘팅 플랫폼, 실린더에서 다양한 창업 인사이트와</h1>
+                <h1 className='t4'>스타트업계에서 활발히 활동하고 있는 다양한 멘토들을 만나보세요.</h1>
                 </div>
             </div>
         </div>

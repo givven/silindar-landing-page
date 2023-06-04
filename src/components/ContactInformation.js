@@ -104,26 +104,33 @@ export default function ContactInformation(){
         for (let key in user_contact_info['information_data']){ condition_5 = condition_5 || user_contact_info['information_data'][key]};
         console.log(condition_4, condition_5)
 
+        let alert_message_list = document.getElementsByClassName('alert-message');
 
-        let alert_message = document.getElementById('alert-message')
-
-        if (condition_1 && condition_2 && condition_3 && condition_4 && condition_5){
-            axios.post(api_address, user_contact_info)
-            .then(function(response){
-                console.log(response);
-                // window.location.replace("/")
-                setAletMessage("메세지가 보내졌습니다.");
-                alert_message.style.color = 'white';
-            })
-            .catch(function(error){
-                console.log(error);
-                setAletMessage("오류가 났습니다.");
-                alert_message.style.color = '#FF3E3E';
-            })
+        if (condition_1 && condition_2 && condition_3){
+            if (condition_4 && condition_5){
+                axios.post(api_address, user_contact_info)
+                .then(function(response){
+                    console.log(response);
+                    // window.location.replace("/")
+                    setAletMessage("메세지가 보내졌습니다.");
+                    for (let alert_message of alert_message_list){
+                        alert_message.style.color = 'white';
+                    }
+                })
+                .catch(function(error){
+                    console.log(error);
+                    setAletMessage("오류가 났습니다.");
+                    for (let alert_message of alert_message_list){alert_message.style.color = '#FF3E3E';}
+                })
+            }
+            else{
+                setAletMessage("박스를 체크하지 않았습니다.");
+                for (let alert_message of alert_message_list){alert_message.style.color = '#FF3E3E';}
+            }
         }
         else{
             setAletMessage("내용이 비어 있습니다.");
-            alert_message.style.color = '#FF3E3E';
+            for (let alert_message of alert_message_list){ alert_message.style.color = '#FF3E3E';}
         }
     }
 
@@ -197,7 +204,7 @@ export default function ContactInformation(){
                                         <textarea id='content_textarea' placeholder='내용을 입력해주세요...' onChange={onChangeContent}></textarea>
                                     </div>
                                 </div>
-                                <div id='alert-message'>{ alert_message }</div>
+                                <div className='alert-message'>{ alert_message }</div>
                                 <article className='greenHoverButton contact_submit'>
                                     <input type="button" onClick={sendData} />
                                     <div>
@@ -285,7 +292,7 @@ export default function ContactInformation(){
                                             <textarea id='content_textarea_mobile'  placeholder='내용을 입력해주세요...' onChange={onChangeContent}></textarea>
                                         </div>
                                     </div>
-                                    <div id='alert-message'>{ alert_message }</div>
+                                    <div className='alert-message'>{ alert_message }</div>
                                     <article className='greenHoverButton contact_submit'>
                                         <input type="button" onClick={sendData} />
                                         <div>
