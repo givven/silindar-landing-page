@@ -32,7 +32,7 @@
     line-height: 150%;
     letter-spacing: -0.6px;
 
-    font-size: 28px;
+    font-size: min(4vw,28px);
     margin-bottom: 10px;
 }
 

@@ -10,7 +10,6 @@ import './Dropdown.css'
 
 import { deepPurple } from '@material-ui/core/colors/';
 
-
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
 const MenuProps = {
@@ -70,16 +69,18 @@ export default function MultipleSelect({data_list, class_name, title_name , pers
           labelId="demo-multiple-name-label"
           id="demo-multiple-name"
           multiple
+          defaultValue={['job-plan']}
           value={personName}
           onChange={handleChange}
           input={<OutlinedInput label="Name" />}
-          MenuProps={MenuProps}
-        >
+          // MenuProps={MenuProps}
+        > 
           {data_list.map((data) => (
             <MenuItem
               key={data.name}
               value={data.value}
               style={getStyles(data.name, personName, theme)}
+              checked={true}
             >
               {data.name}
             </MenuItem>

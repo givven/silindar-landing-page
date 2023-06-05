@@ -67,7 +67,7 @@
 } */
 
 .greenHoverButton{
-  width: min(80vw,260px);
+  width: min(80vw,250px);
   height: 44px;
   box-sizing: border-box;
   position: relative;
@@ -123,6 +123,8 @@
 
 .button-col{
     padding-top: 9px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 /* .service_introduce_recommend{
@@ -137,7 +139,7 @@
 }
 
 .service_introduce_recommend img{
-    width: min(80vw,340px);
+    width: min(100%,340px);
     height: 157px;
 }
 
@@ -202,7 +204,7 @@
 .mobile-introduce-image > div > .t1-mobile{
     font-weight: 500;
     font-family: Pretendard;
-    font-size: 16px;
+    font-size: min(5vw,16px);
     margin-bottom: 0px;
 }
 

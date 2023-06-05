@@ -218,8 +218,14 @@ body{
 .study_category_label > div{
     width: 20px;
     height: 20px;
-    margin-left: -15px;
+    /* margin-left: -15px; */
     background-color: #4F5C0B;
+}
+.idea_category_label > div{
+    width: 20px;
+    height: 20px;
+    /* margin-left: -15px; */
+    background-color: #276931;
 }
 
 .main_vanner{
@@ -232,7 +238,7 @@ body{
     /* width: 100%;
     padding-left: 25%; */
     /* --> */
-    width: 650px;
+    width: min(60vw,650px);
     padding-right: 50px;
 }
 
@@ -240,7 +246,7 @@ body{
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 500;
-    font-size: 23px;
+    font-size: min(3vw,23px);
     line-height: 150%;
     letter-spacing: -0.6px;
     color: rgba(255, 255, 255, 0.7);
@@ -254,7 +260,7 @@ body{
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 700;
-    font-size: 36px;
+    font-size: min(4vw,36px);
     line-height: 150%;
     letter-spacing: -0.6px;
     color: #FFFFFF;
@@ -263,7 +269,7 @@ body{
     transform: translate(0, -50%);
 }
 .main_vanner > div > img{
-    height: 38px;
+    height: min(5vw,38px);
     display: inline;
     position: absolute;
     top: 50%;

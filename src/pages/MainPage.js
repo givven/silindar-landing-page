@@ -14,7 +14,6 @@ import CategoryInform from '../components/CategoryInform';
 import React, { useEffect, useState } from 'react';
 // import { Cookies } from 'react-cookie';
 import CheckBox from '../components/CheckBox';
-// import {cookie} from '../metadata/calendar_event_data';
 import DemoApp from '../components/DemoApp';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid'
@@ -46,7 +45,7 @@ class MainPage extends React.Component{
       scrollPosition: 0,
       jobId: [],
       informId: [],
-      event_data: [],
+      schedule_data: [],
       month_ko:"",
       month_en:"",
       schedule_info:{},
@@ -58,9 +57,7 @@ class MainPage extends React.Component{
   componentDidMount(){
   }
   componentWillUnmount(){
-    console.log('한번만 실행');
-    console.log('month calendar schedules');
-    console.log(this.state);
+    console.log('componentWillUnmount()');
 
     let parent_this = this;
 
@@ -68,13 +65,40 @@ class MainPage extends React.Component{
     let server_port = process.env.REACT_APP_SERVER_PORT;
     let server_address = server_name + ":" + server_port;
     let api_address = server_address + '/api/v1/schedules/month';
+
+    console.log("api get:",api_address);
     axios.get(api_address)
     .then(function(response){
       let data = response.data;
       console.log(data);
-      parent_this.setState({'event_data':data.schedule_event});
+      let schedule_data = data.schedule_event
+      parent_this.setState({'schedule_data':schedule_data});
       parent_this.setState({'month_ko':data.month_ko});
       parent_this.setState({'month_en':data.month_en});
+
+      let addInfo = [];
+      let defaultJobId = [];
+      let removeInfo = [];
+      let defaultInformId = [];
+      for (let schedule of schedule_data){
+        if(schedule.status){
+          addInfo.push(schedule);
+          defaultJobId = defaultJobId.concat(schedule['job']);
+          defaultInformId = defaultInformId.concat(schedule['inform']);
+        }
+        else{
+          removeInfo.push(schedule);
+        }
+      }
+      const duplicate = (arr) => [...new Set(arr.filter((value, index, array) => array.indexOf(value) !== index))];
+      defaultJobId = duplicate(defaultJobId);
+      defaultInformId = duplicate(defaultInformId);
+
+      parent_this.setState({'jobId':defaultJobId});
+      parent_this.setState({'informId':defaultInformId});
+
+      parent_this.calendarRef.current.props.eventAdd(addInfo);
+      parent_this.calendarRef.current.props.eventRemove(removeInfo);
     })
     .catch(function(error){
         console.log(error);
@@ -82,7 +106,7 @@ class MainPage extends React.Component{
   }
 
   openModal = () => {
-    console.log("Hello man")
+    console.log("open calendar schedule popup")
     const body = document.querySelector('body');
 
     let current_position = window.pageYOffset
@@ -115,11 +139,9 @@ class MainPage extends React.Component{
       scrollbars: false,
       verticalAlign: true,
     };
-    // const cookies = new Cookies();
-    // const event_data = cookies.get('event-data');
 
-    const job_name_list = [{name:'기획',value:'job-plan'}, {name:'디자인',value:'job-design'},{name:'개발',value:'job-dev'},{name:'마케팅',value:'job-market'}, {name:'예비창업가',value:'job-start'}];
-    const information_name_list = [{name:'컨퍼런스',value:'inform-confer'},{name:'멘토링',value:'inform-mento'},{name:'스터디',value:'inform-study'},{name:'공모전',value:'inform-idea'}];
+    const job_name_list = [{name:'기획',value:'plan'}, {name:'디자인',value:'design'},{name:'개발',value:'dev'},{name:'마케팅',value:'market'}, {name:'예비창업가',value:'start'}];
+    const information_name_list = [{name:'컨퍼런스',value:'confer'},{name:'멘토링',value:'mento'},{name:'스터디',value:'study'},{name:'공모전',value:'idea'}];
 
     const categoryHandleChange = (category_state_name, schedule_list, item_type) =>{
       const handleChange = (event) => {
@@ -139,7 +161,7 @@ class MainPage extends React.Component{
           inform_select_id_list = this.state.informId;
         }
 
-        let eventInfo = [];
+        // let eventInfo = [];
         let addInfo = [];
         let removeInfo = [];
 
@@ -148,16 +170,16 @@ class MainPage extends React.Component{
           let check = false;
           for(let inform_id of inform_id_list){
             for(let inform_select_id of inform_select_id_list){
-              let typed = inform_select_id.split('-')[0];
-              let event_id = inform_select_id.split('-')[1];
+              // let typed = inform_select_id.split('-')[0];
+              let event_id = inform_select_id //inform_select_id.split('-')[1];
 
               if (inform_id === event_id){
                 let job_id_list = schedule['job'];
 
                 for(let job_id of job_id_list){
                   for(let job_select_id of job_select_id_list){
-                    let job_typed = job_select_id.split('-')[0];
-                    let job_event_id = job_select_id.split('-')[1];
+                    // let job_typed = job_select_id.split('-')[0];
+                    let job_event_id = job_select_id //job_select_id.split('-')[1];
 
                     if (job_id === job_event_id){
                       check = true;
@@ -185,17 +207,13 @@ class MainPage extends React.Component{
         for(let schedule of addInfo){
           let schedule_copy = {...schedule};
           schedule_copy['status'] = true;
-          eventInfo.push(schedule_copy);
+          // eventInfo.push(schedule_copy);
         }
         for(let schedule of removeInfo){
           let schedule_copy = {...schedule};
           schedule_copy['status'] = false;
-          eventInfo.push(schedule_copy);
+          // eventInfo.push(schedule_copy);
         }
-
-        console.log("cookie 데이터:",eventInfo);
-        console.log("일정 추가:",addInfo);
-        console.log("일정 삭제:",removeInfo);
 
         this.calendarRef.current.props.eventAdd(addInfo);
         this.calendarRef.current.props.eventRemove(removeInfo);
@@ -215,7 +233,7 @@ class MainPage extends React.Component{
       let addInfo = [];
       let removeInfo = [];
 
-      for(let item of this.state.event_data){
+      for(let item of this.state.schedule_data){
         if ((target.id === item.typed)){
           if (target.checked){
             item['status'] = target.checked;
@@ -250,24 +268,12 @@ class MainPage extends React.Component{
       }
       // cookies.set('event-data',eventInfo);
 
-      console.log("추가 정보:",addInfo);
-      console.log("제거 정보:",removeInfo);
-
       this.calendarRef.current.props.eventAdd(addInfo);
       this.calendarRef.current.props.eventRemove(removeInfo);
 
     };  
     const DAY_NAMES = ['일','월','화','수','목','금','토',];
 
-    const dropdown_options = [
-      { label: '기획', value: 'plan' },
-      { label: '디자인', value: 'design' },
-      { label: '개발', value: 'dev' },
-      { label: '마케팅', value: 'market' },
-      { label: '예비창업가', value: 'startup' }
-    ];
-
-    console.log(this.state);
     return (
       <div>
         <MobileNavbar></MobileNavbar>
@@ -277,7 +283,7 @@ class MainPage extends React.Component{
               <div className='section0'>
                 <div className='d-none d-sm-block'>
                 <div className='section0__cropped'>
-                  <img src='images/title.svg' className='section0__pages'>
+                  <img src='images/title.png' className='section0__pages'>
                     {/* <img src='images/title_name.png'></img> */}
                   </img>
                   <div className='main_vanner'>
@@ -335,7 +341,7 @@ class MainPage extends React.Component{
                         data_list={job_name_list} 
                         class_name={"job_category_dropdown"}
                         personName={this.state.jobId}
-                        handleChange={categoryHandleChange("jobId", this.state.event_data,'job')}
+                        handleChange={categoryHandleChange("jobId", this.state.schedule_data,'job')}
     
                       >
                       </Dropdown>
@@ -344,7 +350,7 @@ class MainPage extends React.Component{
                         data_list={information_name_list}
                         class_name={"information_category_dropdown"} 
                         personName={this.state.informId}
-                        handleChange={categoryHandleChange("informId",this.state.event_data,'inform')}>
+                        handleChange={categoryHandleChange("informId",this.state.schedule_data,'inform')}>
                       </Dropdown>
                     </div>
 
@@ -390,6 +396,10 @@ class MainPage extends React.Component{
                       <div className='study_category_label category_label'>
                         <div></div>
                         <h1>스터디</h1>
+                      </div>
+                      <div className='idea_category_label category_label'>
+                        <div></div>
+                        <h1>공모전</h1>
                       </div>
                     </div>
                     <Row>
@@ -569,24 +579,13 @@ class MainPage extends React.Component{
   }
 
   handleEventClick = (clickInfo) => {
-    // if (window(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
-    //   clickInfo.event.remove() // will render immediately. will call handleEventRemove
-    // }
-  
-    // alert('Event: ' + clickInfo.event.title);
-    // alert('Coordinates: ' + clickInfo.jsEvent.pageX + ',' + clickInfo.jsEvent.pageY);
-    // alert('View: ' + clickInfo.view.type);
-    // var myWindow = window.open("", "_self");
-    // myWindow.document.write("<p>I replaced the current window.</p>");
-    console.log(clickInfo);
-    console.log(clickInfo.event);
-    console.log(clickInfo.timeText);
-    console.log(clickInfo.event.title);
-    console.log(clickInfo.event.extendedProps);
-    console.log(clickInfo.event.extendedProps.body);
-    console.log(this.state);
+    console.log(clickInfo.timeText, clickInfo.event.title, clickInfo.event.extendedProps);
     let schedule_data =  clickInfo.event.extendedProps;
-    let schedule_info = {'title':clickInfo.event.title,'content':schedule_data.body,'link':schedule_data.link}
+    console.log(schedule_data);
+    let category_value = []
+    category_value.concat(schedule_data.job, schedule_data.inform);
+    console.log("데이터:",category_value);
+    let schedule_info = {'title':clickInfo.event.title,'content':schedule_data.body, 'job':schedule_data.job, 'inform':schedule_data.inform, 'link':schedule_data.link}
     this.setState({schedule_info:schedule_info});
     this.openModal()
   }

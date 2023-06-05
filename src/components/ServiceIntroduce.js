@@ -93,7 +93,7 @@ export default function ServiceIntroduce(){
                         whileInView={{
                             opacity: 1, 
                             scale: 1,
-                            transition:{ delay: 0.5, duration: 1},
+                            transition:{ delay: 0.5, duration: 3},
                             y: 0
                         }}
                         >

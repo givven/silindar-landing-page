@@ -175,7 +175,7 @@ input:-webkit-autofill {
     padding-left: 10px;
 }
 
-#contact_number_email{
+#contact_info{
     width: 221px;
     height: 28px;
     margin-left: 8px;
@@ -206,7 +206,7 @@ input:-webkit-autofill {
     border: 1px solid #6F6F6F;
 }
 
-.mobile #contact_number_email_mobile{
+.mobile #contact_info_mobile{
     margin-left: 0px;
     text-align: center;
 
@@ -220,7 +220,7 @@ input:-webkit-autofill {
     border: 1px solid #6F6F6F;
 }
 
-.mobile #content_textarea_mobile{
+.mobile #content_mobile{
     margin-top: 11px;
 }
 

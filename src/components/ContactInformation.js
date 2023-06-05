@@ -23,8 +23,8 @@ export default function ContactInformation(){
         },
         content_data:{
             contact_name: "",
-            contact_number_email: "",
-            content_textarea: ""
+            contact_info: "",
+            content: ""
         }
     });
 
@@ -90,14 +90,14 @@ export default function ContactInformation(){
 
         let server_address = server_name + ":" + server_port;
 
-        let api_address = server_address + '/api/v1/user/contactinfo'
+        let api_address = server_address + '/api/v1/contacts/info'
         
         console.log(api_address);
 
 
         let condition_1 = user_contact_info['content_data']["contact_name"] !== "";
-        let condition_2 = user_contact_info['content_data']["contact_number_email"] !== "";
-        let condition_3 = user_contact_info['content_data']["content_textarea"] !== "";
+        let condition_2 = user_contact_info['content_data']["contact_info"] !== "";
+        let condition_3 = user_contact_info['content_data']["content"] !== "";
         let condition_4 = false
         for (let key in user_contact_info['user_data']){ condition_4 = condition_4 || user_contact_info['user_data'][key] };
         let condition_5 = false
@@ -199,9 +199,9 @@ export default function ContactInformation(){
                                     <div id='contact_content'>
                                         <h1>내용</h1>
                                         <input id='contact_name' type="text" placeholder='이름' onChange={onChangeContent}/>
-                                        <input id='contact_number_email' type="text" placeholder='연락처/이메일' onChange={onChangeContent}/>
+                                        <input id='contact_info' type="text" placeholder='연락처/이메일' onChange={onChangeContent}/>
                                         <br></br>
-                                        <textarea id='content_textarea' placeholder='내용을 입력해주세요...' onChange={onChangeContent}></textarea>
+                                        <textarea id='content' placeholder='내용을 입력해주세요...' onChange={onChangeContent}></textarea>
                                     </div>
                                 </div>
                                 <div className='alert-message'>{ alert_message }</div>
@@ -287,9 +287,9 @@ export default function ContactInformation(){
                                         <div id='contact_content'>
                                             <h1>내용</h1>
                                             <input id='contact_name_mobile' type="text" placeholder='이름' onChange={onChangeContent}/>
-                                            <input id='contact_number_email_mobile' type="text" placeholder='연락처/이메일' onChange={onChangeContent}/>
+                                            <input id='contact_info_mobile' type="text" placeholder='연락처/이메일' onChange={onChangeContent}/>
                                             <br></br>
-                                            <textarea id='content_textarea_mobile'  placeholder='내용을 입력해주세요...' onChange={onChangeContent}></textarea>
+                                            <textarea id='content_mobile'  placeholder='내용을 입력해주세요...' onChange={onChangeContent}></textarea>
                                         </div>
                                     </div>
                                     <div className='alert-message'>{ alert_message }</div>
