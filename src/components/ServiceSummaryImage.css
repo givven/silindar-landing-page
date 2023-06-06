@@ -3,8 +3,8 @@
 }
 
 .service_summary_cropped .main-background{
-    width: 100%;
-    height: 585px;
+    /* width: 100%; */
+    height: min(60vw,585px);
     object-fit: cover;
     /* position: relative; */
     vertical-align: bottom;

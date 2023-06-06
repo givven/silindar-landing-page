@@ -6,14 +6,24 @@ import { color, motion } from "framer-motion"
 export default function ServiceIntroduce(){
     const team_building_list = [
         {id:'col'},
-        {id:'team_building_youth', name:'청소년 예비창업가 팀빌딩 하러가기',link:'https://open.kakao.com/o/g8Z7TLnf'},
-        {id:'team_building_startup',name:'대학생 예비창업가 팀빌딩 하러가기',link:'https://open.kakao.com/o/gXVAz5mf'},
+        {id:'team_building_youth', name:'청소년 스타트업 팀빌딩 하러가기',link:'https://open.kakao.com/o/g8Z7TLnf'},
+        {id:'team_building_startup',name:'대학생 스타트업 팀빌딩 하러가기',link:'https://open.kakao.com/o/gXVAz5mf'},
         {id:'col'},
         {id:'col'},
-        {id:'team_building_office',name:'직장인 예비창업가 팀빌딩 하러가기',link:'https://open.kakao.com/o/g8RTLLnf'},
+        {id:'team_building_office',name:'직장인 스타트업 팀빌딩 하러가기',link:'https://open.kakao.com/o/g8RTLLnf'},
         {id:'team_building_startup',name:'초기스타트업 경력자 팀빌딩 하러가기',link:'https://open.kakao.com/o/g3IJMLnf'},
         {id:'col'},
     ];
+    let report_calendar_link = 'https://forms.gle/f6iVxt5y3SJoMj8p6'
+    let silinder_link = 'https://www.silinder.co.kr'
+
+    let link_list = {
+        'silinder_link': 'https://www.silinder.co.kr',
+        'menti_link': 'https://forms.gle/pGbcS4ZsVeRNtajx7',
+        'mento_link': 'https://forms.gle/3YZNXgciT2LEHjqB8',
+        'report_calendar_link':'https://forms.gle/f6iVxt5y3SJoMj8p6',
+        'feedback_link':'https://forms.gle/VxgVBhFB9BKX234u5'
+    }
 
     function handleClick(e){
         window.location.href = 'https://open.kakao.com/o/gysUutgf?rt=O009'
@@ -29,21 +39,66 @@ export default function ServiceIntroduce(){
                 <div id='service_introduce'>
                     <h1 className='service_introduce_main_title'>서비스 소개</h1>
                     <h1 className='service_introduce_order'>01</h1>
-                    <h1 className='service_introduce_title'>관심  분야 별 맞춤 일정</h1>
-                    <div className='d-none d-sm-block'>
-                        <h1 className='service_introduce_content'>실린더는 기획자, 디자이너, 개발자, 예비 창업가 등 관심분야에 알맞는 정보를 제공합니다.</h1>
-                        <h1 className='service_introduce_content'>누구나 도전 가능한 창업지원 공모전 일정부터 멘토링 스터디, 컨퍼런스, 네트워킹파티 일정을 확인해보세요.</h1>
+                    <h1 className='service_introduce_title'>스타트업 멘토링 서비스</h1>
+                    <div className='d-none d-md-block'>
+                        <h1 className='service_introduce_content'>현재 많은 투자 유치 스타트업 CEO, 종사자분들께서 적극적인 멘토링을 기다리고 있으니 많은 지원 바랍니다.</h1>
                     </div>
-                    <div className='d-block d-sm-none'>
-                        <h1 className='service_introduce_content'>실린더는 기획자, 디자이너, 개발자, 예비 창업가 등</h1>
-                        <h1 className='service_introduce_content'>관심분야에 알맞는 정보를 제공합니다.</h1>
-                        <h1 className='service_introduce_content'>누구나 도전 가능한 창업지원 공모전 일정부터 멘토링 스터디,</h1>
-                        <h1 className='service_introduce_content'>컨퍼런스, 네트워킹파티 일정을 확인해보세요.</h1>
+                    <div className='d-block d-md-none '>
+                        <h1 className='service_introduce_content'>현재 많은 투자 유치 스타트업 CEO, 종사자분들께서</h1>
+                        <h1 className='service_introduce_content'>적극적인 멘토링을 기다리고 있으니 많은 지원 바랍니다.</h1>
                     </div>
+                    {/* <div className='d-none d-sm-block'>
+                        <div className='mentoring '>
+                        <article className='greenHoverButton mento_apply'>
+                            <input type="button" onClick={()=>{window.location.href = link_list['mento_link']}}/>
+                            <div>
+                                <span>멘토 신청하기</span>
+                            </div>
+                        </article>
+                        <article className='greenHoverButton menti_apply'>
+                            <input type="button" onClick={()=>{window.location.href = link_list['menti_link']}}/>
+                            <div>
+                                <span>멘티 신청하기</span>
+                            </div>
+                        </article>
+                        </div>
+                    </div> */}
+                    {/* <div className='d-block d-sm-none'>
+                        <div className='mentoring-mobile'> */}
+                    <div className='mentoring'>
+                        <article className='greenHoverButton mento_menti_apply'>
+                            <input type="button" onClick={()=>{window.location.href = link_list['mento_link']}}/>
+                            <div>
+                                <span>멘토 멘티 신청하기</span>
+                            </div>
+                        </article>
+                    </div>
+                        {/* </div>
+                    </div> */}
+                    
+                    
                     <h1 className='service_introduce_order'>02</h1>
+                    <h1 className='service_introduce_title'>관심  분야 별 맞춤 일정</h1>
+                    
+                    <h1 className='service_introduce_content'>실린더는 관심 분야에 알맞는 창업 관련 정보를 제공합니다.</h1>
+                    <h1 className='service_introduce_content'>창업 지원 공모전부터 컨퍼런스, 네트워킹 일정을 확인해보세요.</h1>
+                    
+
+                    <h1 className='service_introduce_order'>03</h1>
+                    <h1 className='service_introduce_title'>엄선된 일정</h1>
+                    <h1 className='service_introduce_content'>유용한 컨퍼런스와 스터디 일정을 사람들과 공유하세요.</h1>
+                    <h1 className='service_introduce_content bottom-20'>실린더의 MD를 통해 검수 후 모두에게 알려드릴게요.</h1>
+                    <article className='greenHoverButton schedule_report'>
+                        <input type="button" onClick={()=>{window.location.href = link_list['report_calendar_link']}}/>
+                        <div>
+                            <span>일정 제보 하러가기</span>
+                        </div>
+                    </article>
+
+                    <h1 className='service_introduce_order'>04</h1>
                     <h1 className='service_introduce_title'>공모전 별 팀빌딩</h1>
-                    <h1 className='service_introduce_content'>실린더가 제공하는 창업 공모전 정보는 '누구나' 도전 가능합니다.</h1>
-                    <h1 className='service_introduce_content bottom-20'>팀 빌딩이 필요하다면 아래 링크를 통해 들어와 이야기를 나누어보세요.</h1>
+                    <h1 className='service_introduce_content'>팀 빌딩이 필요하시다면 아래 링크를 통해 </h1>
+                    <h1 className='service_introduce_content bottom-20'>같은 직분의 사람들과 이야기를 나누어보세요.</h1>
                     <Row className="justify-content-md-center">
                     {
                         team_building_list.map((team_building)=>(
@@ -63,33 +118,23 @@ export default function ServiceIntroduce(){
                         ))
                     }
                     </Row>
+                    
 
-                    <h1 className='service_introduce_order'>03</h1>
-                    <h1 className='service_introduce_title'>엄선된 일정</h1>
-                    <h1 className='service_introduce_content'>유용한 컨퍼런스와 스터디 일정을 사람들과 공유하세요.</h1>
-                    <h1 className='service_introduce_content bottom-20'>실린더의 MD를 통해 검수 후 모두에게 알려드릴게요.</h1>
-                    <article className='greenHoverButton schedule_report'>
-                        <input type="button" onClick={handleClick}/>
-                        <div>
-                            <span>일정 제보 하러가기</span>
-                        </div>
-                    </article>
-                    
-                    
-                    <h1 className='service_introduce_order'>04</h1>
-                    <h1 className='service_introduce_title'>시드 투자자와의 멘토링 서비스</h1>
-                    <h1 className='service_introduce_content'>초기 스타트업은 강의가 아닌 맞춤화 된 멘토링이 필요합니다.</h1>
-                    <h1 className='service_introduce_content bottom-20'>매 주 30-40팀씩 생겨나는 신생 투자 유치자들과 소통해보세요.</h1>
+                    <h1 className='service_introduce_order'>05</h1>
+                    <h1 className='service_introduce_title'>사업계획서 무료 피드백</h1>
+                    <h1 className='service_introduce_content'>스타트업 전문 멘토가 여러분의 사업계획서를 피드백해드립니다.</h1>
+                    <h1 className='service_introduce_content bottom-20'> 6월 단 한 달, 무료로 사업 계획서를 검토 받아보세요.</h1>
                     <article className='greenHoverButton schedule_report bottom-63'>
-                        <input type="button" onClick={handleClick}/>
+                        <input type="button" onClick={()=>{window.location.href = link_list['feedback_link']}}/>
                         <div>
-                            <span>시드 투자자와 소통하기</span>
+                            <span>사업계획서 피드백 받기</span>
                         </div>
                     </article>
 
                     <div className='d-none d-sm-block lineGradientGap'>
                         <motion.div 
                         initial={{ opacity: 0, y: -400}}
+                        viewport={{ once:true }}
                         whileInView={{
                             opacity: 1, 
                             scale: 1,
@@ -103,6 +148,7 @@ export default function ServiceIntroduce(){
                     </div>
                     <div className='d-block d-sm-none mobile_lineGradientGap'>
                         <motion.div 
+                        viewport={{ once:true }}
                         initial={{ opacity: 0, y: -200}}
                         whileInView={{
                             opacity: 1, 
@@ -118,6 +164,7 @@ export default function ServiceIntroduce(){
 
                     <motion.div 
                       initial={{ opacity: 0,}}
+                      viewport={{ once:true }}
                       whileInView={{
                         opacity: 1, 
                         scale: 1,

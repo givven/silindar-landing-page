@@ -19,7 +19,7 @@
 
 #service_introduce .service_introduce_order{
     margin-top: 63px;
-    margin-bottom: 5px;
+    margin-bottom: 9px;
     font-size: 14px;
     color: #D6FF01;
     font-weight: 500;
@@ -30,12 +30,12 @@
     font-size: min(5.6vw, 24px);
     color: #ffffff;
     font-weight: 700;
-    margin-bottom: 13px;
+    margin-bottom: 20px;
     font-family: Pretendard;
 }
 
 #service_introduce .service_introduce_content{
-    font-size: min(3.5vw, 16px);
+    font-size: min(3.7vw, 16px);
     color: #EFEFEF;
     font-weight: 500;
 
@@ -210,4 +210,14 @@
 
 .mobile-introduce-image > .one_h1{
     top: 40%;
+}
+
+.mentoring {
+    display: flex;
+    justify-content: center;
+    margin-top: 11px;
+}
+
+.mento_menti_apply{
+    width: 190px;
 }

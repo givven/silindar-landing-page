@@ -55,9 +55,7 @@ class MainPage extends React.Component{
 
   // 상태 주기
   componentDidMount(){
-  }
-  componentWillUnmount(){
-    console.log('componentWillUnmount()');
+    console.log("컴포넌트 마운트");
 
     let parent_this = this;
 
@@ -67,7 +65,7 @@ class MainPage extends React.Component{
     let api_address = server_address + '/api/v1/schedules/month';
 
     console.log("api get:",api_address);
-    axios.get(api_address)
+    axios.get('/api/v1/schedules/month')
     .then(function(response){
       let data = response.data;
       console.log(data);
@@ -103,6 +101,9 @@ class MainPage extends React.Component{
     .catch(function(error){
         console.log(error);
     })
+  }
+  componentWillUnmount(){
+    console.log('componentWillUnmount()');
   }
 
   openModal = () => {
@@ -141,7 +142,7 @@ class MainPage extends React.Component{
     };
 
     const job_name_list = [{name:'기획',value:'plan'}, {name:'디자인',value:'design'},{name:'개발',value:'dev'},{name:'마케팅',value:'market'}, {name:'예비창업가',value:'start'}];
-    const information_name_list = [{name:'컨퍼런스',value:'confer'},{name:'멘토링',value:'mento'},{name:'스터디',value:'study'},{name:'공모전',value:'idea'}];
+    const information_name_list = [{name:'컨퍼런스',value:'confer'},{name:'강연',value:'mento'},{name:'네트워크',value:'study'},{name:'공모전',value:'idea'}];
 
     const categoryHandleChange = (category_state_name, schedule_list, item_type) =>{
       const handleChange = (event) => {
@@ -290,30 +291,31 @@ class MainPage extends React.Component{
                     <h1 className='t1'>실리콘밸리를 향해,</h1>
                     <div>
                       <h1 className='t1'>스타트업 멘토멘티 플랫폼</h1>
-                      <img src='images/title_logo.png'></img>
+                      <img src='images/silinder_logo.png'></img>
                     </div>
                   </div>
                 </div>
                 </div>
               </div>
-              <div className='section0 mobile'>
+              {/* <div className='section0 mobile'>
                 <div className='d-block d-sm-none'>
                   <div>
                     <img src='images/mobile_image.png' className='section0__pages' width={"100%"}></img>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
-              <div className='d-none d-sm-block'>
+              {/* <div className='d-none d-sm-block'> */}
               <div className='section1'>
                 <div className='box calendar_box'>
                   <motion.div
-                    initial={{ opacity: 0, x: -200}}
+                    initial={{ opacity: 0, y: 150}}
+                    viewport={{ once:true }}
                     whileInView={{
                       opacity: 1, 
                       scale: 1,
                       transition:{ duration: 1.8},
-                      x: 0
+                      y: 0
                     }}
                   >
                     
@@ -328,6 +330,7 @@ class MainPage extends React.Component{
                   
                   <motion.div 
                       initial={{ opacity: 0,}}
+                      viewport={{ once:true }}
                       whileInView={{
                         opacity: 1, 
                         scale: 1,
@@ -336,6 +339,8 @@ class MainPage extends React.Component{
                       }}
                   >
                     <div className='category_dropdown'>
+                    {/* <Row>
+                      <Col xs="12" md="6"> */}
                       <Dropdown 
                         title_name={"관심 분야"} 
                         data_list={job_name_list} 
@@ -343,8 +348,9 @@ class MainPage extends React.Component{
                         personName={this.state.jobId}
                         handleChange={categoryHandleChange("jobId", this.state.schedule_data,'job')}
     
-                      >
-                      </Dropdown>
+                      ></Dropdown>
+                      {/* </Col>
+                      <Col xs="12" md="6"> */}
                       <Dropdown 
                         title_name={"관심 정보"} 
                         data_list={information_name_list}
@@ -352,12 +358,14 @@ class MainPage extends React.Component{
                         personName={this.state.informId}
                         handleChange={categoryHandleChange("informId",this.state.schedule_data,'inform')}>
                       </Dropdown>
+                      {/* </Col>
+                      </Row> */}
                     </div>
 
                     {/* 기존 카테고리 기능 */}
                     {/* <Row className="justify-content-center ml-0 mr-0 p-0 mb-5">
                       <Col xs="12" md="6" className='jobFrame'>
-                        <h1>직군 선택</h1>
+                        <h1>직분 선택</h1>
                         <Row className="justify-content-center">
                           <CategoryJobGroup></CategoryJobGroup>
                         </Row>
@@ -385,17 +393,17 @@ class MainPage extends React.Component{
                     </Row> */}
                     
                     <div className='category_type'>
-                      <div className='confer_category_label category_label'>
+                      <div className='category_label confer_category_label '>
                         <div></div>
                         <h1>컨퍼런스</h1>
                       </div>
-                      <div className='mento_category_label category_label'>
+                      <div className='category_label mento_category_label '>
                         <div></div>
-                        <h1>멘토링</h1>
+                        <h1>강연</h1>
                       </div>
                       <div className='study_category_label category_label'>
                         <div></div>
-                        <h1>스터디</h1>
+                        <h1>네트워크</h1>
                       </div>
                       <div className='idea_category_label category_label'>
                         <div></div>
@@ -443,20 +451,21 @@ class MainPage extends React.Component{
                     {/* <CalendarModule></CalendarModule> */}
               
                   </motion.div>
-                  <motion.div 
+                  {/* <motion.div 
                       initial={{ opacity: 0, x: -200}}
+                      viewport={{ once:true }}
                       whileInView={{
                         opacity: 1, 
                         scale: 1,
                         transition:{ duration: 1.5},
                         x: 0
                       }}
-                  >
+                  > */}
                     {/* <Category></Category> */}
 
                     {/* <Row className="justify-content-center ml-0 mr-0 p-0 mt-5">
                       <Col xs="12" md="6" className='jobFrame'>
-                        <h1>직군 선택</h1>
+                        <h1>직분 선택</h1>
                         <Row className="justify-content-center">
                           <CategoryJobGroup></CategoryJobGroup>
                         </Row>
@@ -482,10 +491,10 @@ class MainPage extends React.Component{
                         </Row>
                       </Col>
                     </Row> */}
-                  </motion.div>
+                  {/* </motion.div> */}
                 </div>
               </div>
-            </div>
+            {/* </div> */}
             {/* </Section> */}
   
             {/* <Section> */}
@@ -509,8 +518,8 @@ class MainPage extends React.Component{
                 <div className='serviceIntroduceGradient' style={{
                   width: "100%",
                   background: "linear-gradient(to top, #343D07, rgba(23, 23, 23, 0))",
-                  height: "500px",
-                  marginTop: "-500px",
+                  height: "380px",
+                  marginTop: "-380px",
                   color: '#D6FF01'
                 }}></div>
               </div>
@@ -579,13 +588,13 @@ class MainPage extends React.Component{
   }
 
   handleEventClick = (clickInfo) => {
+    console.log(clickInfo)
     console.log(clickInfo.timeText, clickInfo.event.title, clickInfo.event.extendedProps);
     let schedule_data =  clickInfo.event.extendedProps;
     console.log(schedule_data);
-    let category_value = []
-    category_value.concat(schedule_data.job, schedule_data.inform);
-    console.log("데이터:",category_value);
-    let schedule_info = {'title':clickInfo.event.title,'content':schedule_data.body, 'job':schedule_data.job, 'inform':schedule_data.inform, 'link':schedule_data.link}
+    let tag = schedule_data.job.concat(schedule_data.inform);
+    
+    let schedule_info = {'title':clickInfo.event.title,'content':schedule_data.body, 'date':schedule_data.dateTime, 'tag':tag, 'link':schedule_data.link}
     this.setState({schedule_info:schedule_info});
     this.openModal()
   }

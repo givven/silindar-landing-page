@@ -63,9 +63,10 @@
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 700;
-    font-size: 20px;
+    font-size: min(4vw,20px);
     line-height: 150%;
     letter-spacing: -0.6px;
+    margin-top: 5px;
 }
 .modal > section > header > .t3{
     padding-top: 8px;
@@ -95,6 +96,7 @@
     padding: 16px;
     /* border-bottom: 1px solid #dee2e6; */
     /* border-top: 1px solid #dee2e6; */
+    height: max(10vh,160px);
 }
 .modal > section > main > .content_name{
     font-family: 'Pretendard';

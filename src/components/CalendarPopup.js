@@ -6,19 +6,19 @@ import { render } from '@testing-library/react';
 export default class CalendarPopup extends Component{
     render(){
         const category_name = {'plan':'기획','dev':'개발','design':'디자인','market':'마케팅','start':'예비창업가',
-          'confer':'컨퍼런스','mento':'멘토링','study':'스터디','idea':'공모전'}
-        const { open, close, header, schedule_info } = this.props;
+          'confer':'컨퍼런스','mento':'강연','study':'네트워크','idea':'공모전'}
+        const { open, close, schedule_info } = this.props;
         return (
             <div className={open ? 'openModal modal' : 'modal'}>
               {open ? (
                 <section>
                   <header>
-                    {schedule_info['job'].map((job) =>(
+                    {schedule_info['tag'].map((job) =>(
                       <h1 className='t1'>{category_name[job]}</h1>
                     ))
                     }
                     <h1 className='t2'>{schedule_info['title']}</h1>
-                    <h1 className='t3'>유직현 대표  |  벤처 인사이트</h1> 
+                    <h1 className='t3'>{schedule_info['date']}</h1> 
                     <button className="close" onClick={close}>
                       &times;
                     </button>

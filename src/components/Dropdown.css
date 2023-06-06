@@ -17,9 +17,21 @@
     color: white;
 }
 
+.job_category_dropdown > div{
+    width: min(40vw, 200px);
+}
+
 
 .job_category_dropdown .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
     color: #D6FF01;
+}
+.job_category_dropdown #demo-multiple-name{
+    color: #D6FF01;
+    font-family: Pretendard;
+    font-weight: 500;
+    line-height: 150%;
+    font-size: min(3vw,14px);
+    letter-spacing: -0.6px;
 }
 
 .job_category_dropdown #demo-multiple-name-label {
@@ -33,7 +45,9 @@
     fill: #D6FF01;
 }
 
-
+.information_category_dropdown > div{
+    width: min(40vw, 200px);
+}
 
 .information_category_dropdown .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
     color: #F5EA18;
@@ -52,6 +66,15 @@
 
 .information_category_dropdown .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root{
     color: #F5EA18;
+}
+
+.information_category_dropdown #demo-multiple-name{
+    color: #F5EA18;
+    font-family: Pretendard;
+    font-weight: 500;
+    line-height: 150%;
+    font-size: min(3vw,14px);
+    letter-spacing: -0.6px;
 }
 
 

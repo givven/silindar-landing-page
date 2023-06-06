@@ -22,6 +22,7 @@ input:-webkit-autofill {
     max-width: 900px;
     min-width: 200px;
     /* padding: 0px 86px; */
+    width: min(90vw, 900px);
 }
 
 .contact_popup .title{
@@ -81,7 +82,7 @@ input:-webkit-autofill {
     margin-bottom: 20px;
 }
 #contact_information #idea_information{
-    margin-left: 10px;
+    /* margin-left: 10px; */
 }
 
 
@@ -143,6 +144,10 @@ input:-webkit-autofill {
 }
 .contact_submit > div > span{
     font-size: 12px;
+}
+
+#youth_user{
+    /* margin-left: 5px; */
 }
 
 #contact_content h1{
@@ -239,6 +244,10 @@ input:-webkit-autofill {
     margin-bottom: 30px;
 }
 
+#youth_user_mobile{
+    margin-left: 13px;
+}
+
 #contact_user_mobile{
     display: flex;
     justify-content: space-between;
@@ -253,7 +262,7 @@ input:-webkit-autofill {
 }
 
 #contact_user_second #prestartup_user_mobile{
-    margin-left: 30px;
+    margin-left: 54.5px;
 }
 
 #contact_information_mobile{
@@ -268,6 +277,7 @@ input:-webkit-autofill {
     margin-left: 20px;
 }
 
+
 #contact_information_second{
     display: flex;
     justify-content: right;
@@ -276,7 +286,7 @@ input:-webkit-autofill {
 }
 
 #contact_information_second #other_information_mobile{
-    margin-left: 60px;
+    margin-left: 76px;
 }
 
 .popup_size_mobile{

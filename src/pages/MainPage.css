@@ -36,7 +36,7 @@ color: #ffffff;
     height: 100%;
     color: #ffffff;
 
-    margin-bottom: 109px;
+    margin-bottom: min(15vw,109px);
 }
 
 .section2{
@@ -188,15 +188,14 @@ body{
     justify-content: center;
 }
 
-
 .category_type{
     padding: 0px 15px;
     display: flex;
     margin-bottom: 21px;
 }
 .category_type .category_label{
-    width: 111px;
     display: flex;
+    padding-right: 20px;
 }
 
 .category_label > h1{
@@ -268,6 +267,7 @@ body{
     display: inline;
     transform: translate(0, -50%);
 }
+
 .main_vanner > div > img{
     height: min(5vw,38px);
     display: inline;

@@ -108,7 +108,7 @@ export default function ContactInformation(){
 
         if (condition_1 && condition_2 && condition_3){
             if (condition_4 && condition_5){
-                axios.post(api_address, user_contact_info)
+                axios.post('/api/v1/contacts/info', user_contact_info)
                 .then(function(response){
                     console.log(response);
                     // window.location.replace("/")
@@ -136,12 +136,12 @@ export default function ContactInformation(){
 
     return (
         <div id="contact_input">
-            <div className='d-none d-sm-block popup_bottom'>
+            <div className='d-none d-md-block popup_bottom'>
             <div className='contact_popup'>
                 <div className='popup_size'>
                     <h1 className='title'>정보 입력</h1>
-                    <h1 className='sub_title popup_padding_sizing'>실린더에 대해 더 자세히 알아보고 출시에 대한 최신 정보를 받고 싶으시다면 아래에 연락처 정보를 입력해 주세요.</h1>
-                    <h1 className='sub_title'>정기적인 업데이트와 소식을 알려드리고, 추가 질문이나 참여 기회가 있을 경우 연락을 드릴 수 있습니다</h1>
+                    <h1 className='sub_title'>실린더 출시 알림을 원하실 경우 아래에 연락처와 정보를 입력해 주세요.</h1>
+                    <h1 className='sub_title'>원하시는 사항이 있으시다면 자유롭게 적어주시기 바랍니다.</h1>
 
                     <div id='contact_form'>
                         <Row className="justify-content-md-center">
@@ -149,7 +149,7 @@ export default function ContactInformation(){
                             <Col xs="8">
                                 <h1 className='caution'>해당되는 모든 항목에 체크해주시기 바랍니다. </h1>
                                 <div id='contact_user'>
-                                    <h1>사용자</h1>
+                                    <h1>직분</h1>
                                     <div className='form_input'>
                                         <input type="checkbox" id="youth_user" onChange={onChange}/>
                                         <label htmlFor="youth_user">청소년</label>
@@ -164,7 +164,7 @@ export default function ContactInformation(){
                                     </div>
                                     <div className='form_input'>
                                         <input type="checkbox" id="startup_user" onChange={onChange}/>
-                                        <label htmlFor="startup_user">스타트업 종사자</label>
+                                        <label htmlFor="startup_user">현직 창업가</label>
                                     </div>
                                     <div className='form_input'>
                                         <input type="checkbox" id="prestartup_user" onChange={onChange}/>
@@ -184,11 +184,11 @@ export default function ContactInformation(){
                                     </div>
                                     <div className='form_input'>
                                         <input type="checkbox" id="study_information" onChange={onChange}/>
-                                        <label htmlFor="study_information">스터디</label>
+                                        <label htmlFor="study_information">네트워킹</label>
                                     </div>
                                     <div className='form_input'>
                                         <input type="checkbox" id="mento_information" onChange={onChange}/>
-                                        <label htmlFor="mento_information">멘토링</label>
+                                        <label htmlFor="mento_information">강연</label>
                                     </div>
                                     <div className='form_input'>
                                         <input type="checkbox" id="other_information" onChange={onChange}/>
@@ -220,7 +220,7 @@ export default function ContactInformation(){
             </div>
             </div>
 
-            <div className='d-block d-sm-none popup_mobile_bottom'>
+            <div className='d-block d-md-none popup_mobile_bottom'>
                 <div className='contact_popup contact_popup_mobile'>
                     <div className='popup_size_mobile'>
                         <h1 className='title'>정보 입력</h1>
@@ -231,7 +231,7 @@ export default function ContactInformation(){
                                 <Col xs="1"></Col>
                                 <Col xs="10">
                                     <div id='contact_user_mobile'>
-                                        <h1>사용자</h1>
+                                        <h1>직분</h1>
                                         <div className='form_input'>
                                             <input type="checkbox" id="youth_user_mobile" onChange={onChange}/>
                                             <label htmlFor="youth_user_mobile">청소년</label>
@@ -249,7 +249,7 @@ export default function ContactInformation(){
                                     <div id='contact_user_second'>
                                         <div className='form_input'>
                                             <input type="checkbox" id="startup_user_mobile" onChange={onChange}/>
-                                            <label htmlFor="startup_user_mobile">스타트업 종사자</label>
+                                            <label htmlFor="startup_user_mobile">현직 창업가</label>
                                         </div>
                                         <div className='form_input'>
                                             <input type="checkbox" id="prestartup_user_mobile" onChange={onChange}/>
@@ -269,21 +269,21 @@ export default function ContactInformation(){
                                         </div>
                                         <div className='form_input'>
                                             <input type="checkbox" id="study_information_mobile" onChange={onChange}/>
-                                            <label htmlFor="study_information_mobile">스터디</label>
+                                            <label htmlFor="study_information_mobile">네트워킹</label>
                                         </div>
                                         
                                     </div>
                                     <div id='contact_information_second'>
                                         <div className='form_input'>
                                             <input type="checkbox" id="mento_information_mobile" onChange={onChange}/>
-                                            <label htmlFor="mento_information_mobile">멘토링</label>
+                                            <label htmlFor="mento_information_mobile">강연</label>
                                         </div>
                                         <div className='form_input'>
                                             <input type="checkbox" id="other_information_mobile" onChange={onChange}/>
                                             <label htmlFor="other_information_mobile">기타(내용 입력)</label>
                                         </div>
                                     </div>
-                                    <div className='d-block d-sm-none mobile'>
+                                    <div className='mobile'>
                                         <div id='contact_content'>
                                             <h1>내용</h1>
                                             <input id='contact_name_mobile' type="text" placeholder='이름' onChange={onChangeContent}/>
