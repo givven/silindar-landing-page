@@ -201,6 +201,12 @@ body{
 .category_label > h1{
     display: inline;
     padding-left: 7px;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    font-size: min(3vw,14px);
+    line-height: 150%;
+    letter-spacing: -0.6px;
 }
 
 .confer_category_label > div{
@@ -296,4 +302,28 @@ body{
 
 .fc .fc-day-other .fc-daygrid-day-top{
     justify-content: center;
+}
+
+.main_vanner > .t3{
+    margin-top: 8px;
+    width: min(66vw,574px);
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    font-size: min(2vw,13px);
+    line-height: 150%;
+    letter-spacing: -0.6px;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+thread[role=presentation] > tr > th[rol=columnheader]{
+    padding: 5px 0px;
+}
+
+.fc-theme-standard .fc-popover{
+    background-color: #222222;
+}
+.fc-theme-standard .fc-popover-header{
+    background-color: #222222;
 }

@@ -299,7 +299,7 @@ export default function ContactInformation(){
                                             <span>제출하기</span>
                                         </div>
                                     </article>
-                                    <h1 className='contact_number'>관련 문의 : 010-7250-6297 / Silindar 대표 박상언</h1>
+                                    <h1 className='contact_number'>관련 문의 : 010-7250-6297 / Silinder 대표 박상언</h1>
                                 </Col>
                                 <Col xs="1"></Col>
                             </Row>

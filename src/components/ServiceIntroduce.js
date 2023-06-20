@@ -18,7 +18,7 @@ export default function ServiceIntroduce(){
     let silinder_link = 'https://www.silinder.co.kr'
 
     let link_list = {
-        'silinder_link': 'https://www.silinder.co.kr',
+        'silinder_link': 'http://www.silinder.co.kr',
         'menti_link': 'https://forms.gle/pGbcS4ZsVeRNtajx7',
         'mento_link': 'https://forms.gle/3YZNXgciT2LEHjqB8',
         'report_calendar_link':'https://forms.gle/f6iVxt5y3SJoMj8p6',
@@ -67,7 +67,7 @@ export default function ServiceIntroduce(){
                         <div className='mentoring-mobile'> */}
                     <div className='mentoring'>
                         <article className='greenHoverButton mento_menti_apply'>
-                            <input type="button" onClick={()=>{window.location.href = link_list['mento_link']}}/>
+                            <input type="button" onClick={()=>{window.location.href = link_list['silinder_link']}}/>
                             <div>
                                 <span>멘토 멘티 신청하기</span>
                             </div>
@@ -138,7 +138,7 @@ export default function ServiceIntroduce(){
                         whileInView={{
                             opacity: 1, 
                             scale: 1,
-                            transition:{ delay: 0.5, duration: 3},
+                            transition:{ delay: 0.5, duration: 2},
                             y: 0
                         }}
                         >

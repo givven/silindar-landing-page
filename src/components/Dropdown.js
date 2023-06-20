@@ -73,7 +73,36 @@ export default function MultipleSelect({data_list, class_name, title_name , pers
           value={personName}
           onChange={handleChange}
           input={<OutlinedInput label="Name" />}
-          // MenuProps={MenuProps}
+          inputProps={{
+            MenuProps: {
+                MenuListProps: {
+                    sx: {
+                        backgroundColor: '#222222',
+                        color: 'white',
+                        // ".css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root.Mui-selected":{
+                        //   backgroundColor: 'blue',
+                        // },
+                        "& .css-ov3z8l-MuiMenuItem-root.Mui-selected":{
+                          backgroundColor: "yellow"
+                        },
+                        "& .MuiMenuItem-root.Mui-selected": {
+                          backgroundColor: "#2A2D1C"
+                        },
+                        "& .MuiMenuItem-root:hover": {
+                          backgroundColor: "#222222"
+                        },
+                        "& .MuiMenuItem-root.Mui-selected:hover": {
+                          backgroundColor: "#2A2D1C"
+                        },
+                        "&.MuiOutlinedInput-input:hover":{
+                          backgroundColor: '#2A2D1C'
+                        }
+                        
+                    }
+              
+                }
+            }
+          }}
         > 
           {data_list.map((data) => (
             <MenuItem
@@ -81,6 +110,7 @@ export default function MultipleSelect({data_list, class_name, title_name , pers
               value={data.value}
               style={getStyles(data.name, personName, theme)}
               checked={true}
+              background={'red'}
             >
               {data.name}
             </MenuItem>

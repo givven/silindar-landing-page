@@ -21,7 +21,7 @@
 .modal > section {
     width: 90%;
     max-width: 716px;
-    height: 355px;
+    height: 400px;
     margin: 0 auto;
 
     color: #ffffff;
@@ -39,7 +39,7 @@
 }
 .modal > section > header {
     position: relative;
-    padding: 16px 64px 16px 16px;
+    padding: 16px 64px 5px 16px;
     /* background-color: #f1f1f1; */
     font-weight: 700;
 }
@@ -54,10 +54,11 @@
     width: 50px;
     display: inline-block;
     text-align: center;
-    margin-right: 4px;
+    margin-right: 8px;
     background-color: #767676 ;
     border-radius: 5px;
 
+    padding: 0.8px 0px;
 }
 .modal > section > header > .t2{
     font-family: 'Pretendard';
@@ -93,16 +94,16 @@
 
 
 .modal > section > main {
-    padding: 16px;
+    padding: 0px 16px;
     /* border-bottom: 1px solid #dee2e6; */
     /* border-top: 1px solid #dee2e6; */
-    height: max(10vh,160px);
+    height: max(22vh,180px);
 }
 .modal > section > main > .content_name{
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 700;
-    font-size: 10px;
+    font-size: 15px;
     line-height: 150%;
     letter-spacing: -0.6px;
     color: #FFFFFF;
@@ -112,7 +113,7 @@
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 500;
-    font-size: 10px;
+    font-size: 14px;
     line-height: 150%;
     letter-spacing: -0.6px;
     color: #C1C1C1;

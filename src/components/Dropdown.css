@@ -12,10 +12,10 @@
 #demo-multiple-name{
     border: 1px solid #6F6F6F;
 }
-.css-6hp17o-MuiList-root-MuiMenu-list{
-    background-color: #141414;
+/* .css-6hp17o-MuiList-root-MuiMenu-list{
+    background-color: #222222;
     color: white;
-}
+} */
 
 .job_category_dropdown > div{
     width: min(40vw, 200px);
@@ -44,6 +44,13 @@
 .job_category_dropdown .css-bpeome-MuiSvgIcon-root-MuiSelect-icon > path{
     fill: #D6FF01;
 }
+.information_category_dropdown .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon > path{
+    fill: #F5EA18;
+} 
+
+.information_category_dropdown .css-bpeome-MuiSvgIcon-root-MuiSelect-icon > path{
+    fill: #F5EA18;
+}
 
 .information_category_dropdown > div{
     width: min(40vw, 200px);
@@ -57,12 +64,6 @@
     color: #F5EA18;
 }
 
-.information_category_dropdown .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon > path{
-    fill: #F5EA18;
-}
-.information_category_dropdown .css-bpeome-MuiSvgIcon-root-MuiSelect-icon > path{
-    fill: #F5EA18;
-}
 
 .information_category_dropdown .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root{
     color: #F5EA18;
@@ -86,3 +87,10 @@
 /* .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root.Mui-selected {
     background-color: rgba(214, 255, 1, 0.5);
 } */
+
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root.Mui-selected:hover{
+    background-color: red;
+}
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root:hover{
+    background-color: pink;
+}

@@ -137,13 +137,13 @@ input:-webkit-autofill {
 }
 
 .contact_submit{
-    width: 104px;
-    height: 30px;
+    width: 150px;
+    height: 35px;
     margin-bottom: 12px;
     margin-top: 10px;
 }
 .contact_submit > div > span{
-    font-size: 12px;
+    font-size: 14px;
 }
 
 #youth_user{
@@ -242,6 +242,7 @@ input:-webkit-autofill {
     letter-spacing: -0.6px;
     color:#646464;
     margin-bottom: 30px;
+    width: min(90vw,380px);
 }
 
 #youth_user_mobile{

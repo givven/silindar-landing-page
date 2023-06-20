@@ -293,6 +293,7 @@ class MainPage extends React.Component{
                       <h1 className='t1'>스타트업 멘토멘티 플랫폼</h1>
                       <img src='images/silinder_logo.png'></img>
                     </div>
+                    <h1 className='t3'>스타트업 관련 일정 캘린더 'silindar'를 포함한 하단의 부가 서비스들을 체험해 보세요.</h1>
                   </div>
                 </div>
                 </div>
@@ -309,13 +310,13 @@ class MainPage extends React.Component{
               <div className='section1'>
                 <div className='box calendar_box'>
                   <motion.div
-                    initial={{ opacity: 0, y: 150}}
+                    initial={{ y: 150}}
                     viewport={{ once:true }}
                     whileInView={{
-                      opacity: 1, 
-                      scale: 1,
-                      transition:{ duration: 1.8},
-                      y: 0
+                      y: 0,
+                      // opacity: 0, 
+                      // scale: 1,
+                      transition:{ duration: 1},
                     }}
                   >
                     
