@@ -1,6 +1,6 @@
 .jobGroup{
-  width: 10.8vmin;
-  height: 4.4vmin;
+  width: 130px;
+  height: 44px;
   box-sizing: border-box;
   position: relative;
   background: #141414;
@@ -18,10 +18,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 700;
   line-height: 25px;
   transition: .5s ease;
   border-radius: 70px;
-  font-size: 1.4vmin;
+  font-size: 16px;
   font-weight: 500;
 }
 

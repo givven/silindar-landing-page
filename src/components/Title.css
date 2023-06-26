@@ -5,25 +5,39 @@
     text-align: center;
 }
 #section1__title .t1{
-    font-size: 4vmin;
-    margin-bottom: 10px;
+    font-family: 'Pretendard';
+    font-style: normal;
     font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -0.6px;
+    font-size: min(8vw,40px);
+    margin-bottom: 10px;
 }
 
 #section1__title .t2{
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
     margin-bottom: 35px;
+    line-height: 150%;
+    letter-spacing: -0.6px;
     font-size: 16px;
     color: rgba(255, 255, 255, 0.5);
-    font-weight: 500;
 }
 
 #section1__title .t3{
-    font-size: 3vmin;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -0.6px;
+
+    font-size: min(4vw,28px);
     margin-bottom: 10px;
 }
 
 #section1__title .t4{
-    font-size: 3vmin;
+    font-size: 28px;
     margin-bottom: 71px;
 }
 

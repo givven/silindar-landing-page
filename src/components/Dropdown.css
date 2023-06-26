@@ -1,0 +1,96 @@
+.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
+    background-color: #141414;
+}
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline{
+    border: 1px solid none;
+}
+
+.MuiOutlinedInput-notchedOutline .css-1d3z3hw-MuiOutlinedInput-notchedOutline{
+    border: none;
+}
+
+#demo-multiple-name{
+    border: 1px solid #6F6F6F;
+}
+/* .css-6hp17o-MuiList-root-MuiMenu-list{
+    background-color: #222222;
+    color: white;
+} */
+
+.job_category_dropdown > div{
+    width: min(40vw, 200px);
+}
+
+
+.job_category_dropdown .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
+    color: #D6FF01;
+}
+.job_category_dropdown #demo-multiple-name{
+    color: #D6FF01;
+    font-family: Pretendard;
+    font-weight: 500;
+    line-height: 150%;
+    font-size: min(3vw,14px);
+    letter-spacing: -0.6px;
+}
+
+.job_category_dropdown #demo-multiple-name-label {
+    color: #D6FF01;
+}
+
+.job_category_dropdown .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon > path{
+    fill: #D6FF01;
+}
+.job_category_dropdown .css-bpeome-MuiSvgIcon-root-MuiSelect-icon > path{
+    fill: #D6FF01;
+}
+.information_category_dropdown .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon > path{
+    fill: #F5EA18;
+} 
+
+.information_category_dropdown .css-bpeome-MuiSvgIcon-root-MuiSelect-icon > path{
+    fill: #F5EA18;
+}
+
+.information_category_dropdown > div{
+    width: min(40vw, 200px);
+}
+
+.information_category_dropdown .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
+    color: #F5EA18;
+}
+
+.information_category_dropdown #demo-multiple-name-label {
+    color: #F5EA18;
+}
+
+
+.information_category_dropdown .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root{
+    color: #F5EA18;
+}
+
+.information_category_dropdown #demo-multiple-name{
+    color: #F5EA18;
+    font-family: Pretendard;
+    font-weight: 500;
+    line-height: 150%;
+    font-size: min(3vw,14px);
+    letter-spacing: -0.6px;
+}
+
+
+
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline{
+    border: 1px solid #D6FF01
+}
+
+/* .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root.Mui-selected {
+    background-color: rgba(214, 255, 1, 0.5);
+} */
+
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root.Mui-selected:hover{
+    background-color: red;
+}
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root:hover{
+    background-color: pink;
+}

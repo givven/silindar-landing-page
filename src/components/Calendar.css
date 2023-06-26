@@ -1,4 +1,4 @@
-.fc-theme-standard .fc-scrollgrid {
+.fc-theme-standard .fc-scrollgrid{
     border: none;
 }
 
@@ -19,8 +19,16 @@
     background-color: #3D3D3D;
 }
 
-.fc-day-sun{
-    color: red;
+
+.fc .fc-daygrid-day-number{
+    color: rgba(255, 255, 255, 0.5);;
+}
+
+.fc-day-sun {
+    color:#FF8E8E;
+}
+.fc-day-sat {
+    color: #8B8B8B;
 }
 
 .fc-day-today>div{
@@ -37,9 +45,9 @@
 }
 
 .fc .fc-daygrid-day-frame{
-    border-right: 2px solid black;
-    border-left: 2px solid black;
-    border-bottom: 4px solid black;
+    border-right: 2px solid #171717;
+    border-left: 2px solid #171717;
+    border-bottom: 4px solid #171717;
 }
 .fc-day-sat div{
     border-right: 0px;
