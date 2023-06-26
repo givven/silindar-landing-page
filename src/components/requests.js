@@ -24,12 +24,12 @@ let eventDb = [
 const DELAY = 200
 let simulateErrors = false
 
-document.addEventListener('keypress', (ev) => {
-  if (ev.key === 'e') {
-    alert('You pressed the key "e". Will begin to simulate errors.')
-    simulateErrors = true
-  }
-})
+// document.addEventListener('keypress', (ev) => {
+//   if (ev.key === 'e') {
+//     alert('You pressed the key "e". Will begin to simulate errors.')
+//     simulateErrors = true
+//   }
+// })
 
 export function requestEventsInRange(startStr, endStr) {
   console.log(`[STUB] requesting events from ${startStr} to ${endStr}`)
