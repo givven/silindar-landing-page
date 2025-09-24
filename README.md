@@ -1,4 +1,22 @@
-# Getting Started with Create React App
+# 실린더 랜딩 페이지 (Silindar Landing Page)
+
+실린더 서비스의 랜딩 페이지입니다. React와 Create React App으로 구축되었습니다.
+
+## Vercel 배포
+
+이 프로젝트는 Vercel에서 배포할 수 있습니다:
+
+1. [Vercel](https://vercel.com)에 로그인
+2. GitHub 저장소 연결
+3. 자동 배포 설정 완료
+
+### 배포 설정
+
+- **Build Command**: `npm run build`
+- **Output Directory**: `build`
+- **Install Command**: `npm install --legacy-peer-deps`
+
+## 로컬 개발
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
