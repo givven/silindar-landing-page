@@ -2,19 +2,12 @@ import './reset.css'
 
 // import {SectionsContainer, Section} from 'react-fullpage';
 import './MainPage.css';
-import Category from '../components/Category';
 import Contact from '../components/Contact';
 
-import { color, motion } from "framer-motion"
+import { motion } from "framer-motion"
 import Title from '../components/Title';
-import Calendar from '../components/Calendar';
-import CategoryJobGroup from '../components/CategoryJobGroup';
 import { Col, Row } from 'react-bootstrap';
-import CategoryInform from '../components/CategoryInform';
-import React, { useEffect, useState } from 'react';
-// import { Cookies } from 'react-cookie';
-import CheckBox from '../components/CheckBox';
-import DemoApp from '../components/DemoApp';
+import React from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
@@ -440,14 +433,14 @@ class MainPage extends React.Component{
               <div className='section0'>
                 <div className='d-none d-sm-block'>
                 <div className='section0__cropped'>
-                  <img src='images/title.png' className='section0__pages'>
+                  <img src='images/title.png' className='section0__pages' alt="실린더 메인 타이틀">
                     {/* <img src='images/title_name.png'></img> */}
                   </img>
                   <div className='main_vanner'>
                     <h1 className='t1'>실리콘밸리를 향해,</h1>
                     <div>
                       <h1 className='t1'>스타트업 멘토멘티 플랫폼</h1>
-                      <img src='images/silinder_logo.png'></img>
+                      <img src='images/silinder_logo.png' alt="실린더 로고"></img>
                     </div>
                     <h1 className='t3'>스타트업 관련 일정 캘린더 'silindar'를 포함한 하단의 부가 서비스들을 체험해 보세요.</h1>
                   </div>
@@ -457,7 +450,7 @@ class MainPage extends React.Component{
               {/* <div className='section0 mobile'>
                 <div className='d-block d-sm-none'>
                   <div>
-                    <img src='images/mobile_image.png' className='section0__pages' width={"100%"}></img>
+                    <img src='images/mobile_image.png' className='section0__pages' width={"100%"} alt="모바일 메인 이미지"></img>
                   </div>
                 </div>
               </div> */}

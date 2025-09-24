@@ -1,10 +1,9 @@
-import { excludeById, getTodayStr } from './utils'
+import { excludeById } from './utils'
 
 /*
 functions that simulate network requests
 */
 
-let todayStr = getTodayStr()
 let eventGuid = 0
 let eventDb = [
   // {
