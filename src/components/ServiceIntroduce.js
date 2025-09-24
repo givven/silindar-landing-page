@@ -177,12 +177,12 @@ export default function ServiceIntroduce(){
                         <Row className="justify-content-md-center">
                             <Col sm="12" md="4">
                                 <div className='d-none d-sm-block'>
-                                    <img src='images/recommend_1.png'></img>
+                                    <img src='images/recommend_1.png' alt="창업 시작 추천 이미지"></img>
                                     <h1 className='t1'>창업을 어떻게 시작해야할 지 막막했던 분</h1>
                                 </div>
                                 <div className='d-block d-sm-none'>
                                     <div className='mobile-introduce-image'>
-                                        <img src='images/recommend_1_mobile.png' ></img>
+                                        <img src='images/recommend_1_mobile.png' alt="창업 시작 추천 모바일 이미지"></img>
                                         <div>
                                             <h1 className='t1-mobile'>창업을 어떻게</h1>
                                             <h1 className='t1-mobile'>시작해야할 지 막막했던 분</h1>
@@ -192,12 +192,12 @@ export default function ServiceIntroduce(){
                             </Col>
                             <Col sm="12" md="4">
                                 <div className='d-none d-sm-block'>
-                                    <img src='images/recommend_2.png'></img>
+                                    <img src='images/recommend_2.png' alt="멘토링 추천 이미지"></img>
                                     <h1 className='t1'>전문적인 스타트업 맞춤 멘토링/과외가 필요한 분</h1>
                                 </div>
                                 <div className='d-block d-sm-none'>
                                     <div className='mobile-introduce-image'>
-                                        <img src='images/recommend_2_mobile.png'></img>
+                                        <img src='images/recommend_2_mobile.png' alt="멘토링 추천 모바일 이미지"></img>
                                         <div>
                                             <h1 className='t1-mobile'>전문적인 스타트업</h1>
                                             <h1 className='t1-mobile'>맞춤 멘토링/과외가 필요한 분</h1>
@@ -207,12 +207,12 @@ export default function ServiceIntroduce(){
                             </Col>
                             <Col sm="12" md="4">
                                 <div className='d-none d-sm-block'>
-                                    <img src='images/recommend_3.png'></img>
+                                    <img src='images/recommend_3.png' alt="네트워킹 추천 이미지"></img>
                                     <h1 className='t1'>업계 사람들과 네트워크를 쌓고 싶은 분</h1>
                                 </div>
                                 <div className='d-block d-sm-none'>
                                     <div className='mobile-introduce-image '>
-                                        <img src='images/recommend_3_mobile.png'></img>
+                                        <img src='images/recommend_3_mobile.png' alt="네트워킹 추천 모바일 이미지"></img>
                                         <div className='one_h1'>
                                             <h1 className='t1-mobile'>업계 사람들과 네트워크를 쌓고 싶은 분</h1>
                                         </div>

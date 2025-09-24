@@ -12,19 +12,19 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
-import { formatDate } from '@fullcalendar/core';
+// import { formatDate } from '@fullcalendar/core';
 import { createSelector } from 'reselect';
 import { getHashValues } from '../components/utils';
 import { connect } from 'react-redux';
 import actionCreators from '../actions'
-import AdvanceReservation from '../components/AdvanceReservation';
+// import AdvanceReservation from '../components/AdvanceReservation';
 import CalendarNote from '../components/CalendarNote';
 import ServiceSummary from '../components/ServiceSummary';
 import ServiceIntroduce from '../components/ServiceIntroduce';
 import ServiceSummaryImage from '../components/ServiceSummaryImage';
 import ContactInformation from '../components/ContactInformation';
 import MobileNavbar from '../components/MobileNavbar';
-import { Alert } from '@mui/material';
+// import { Alert } from '@mui/material';
 import CalendarPopup from '../components/CalendarPopup';
 import Dropdown from '../components/Dropdown';
 import axios from 'axios';
@@ -236,10 +236,9 @@ class MainPage extends React.Component{
       }
     };
 
-    let server_name = process.env.REACT_APP_SERVER_NAME;
-    let server_port = process.env.REACT_APP_SERVER_PORT;
-    let server_address = server_name + ":" + server_port;
-    let api_address = server_address + '/api/v1/schedules/month';
+    // let server_name = process.env.REACT_APP_SERVER_NAME;
+    // let server_port = process.env.REACT_APP_SERVER_PORT;
+    // let server_address = server_name + ":" + server_port;
 
     axios.get('/api/v1/schedules/month')
     .then(function(response){
@@ -282,14 +281,6 @@ class MainPage extends React.Component{
   }
 
   render(){
-    let options = {
-      anchors: ['sectionOne', 'sectionTwo', 'sectionThree'],
-      navigation: true,
-      delay: 1000,
-      scrollbars: false,
-      verticalAlign: true,
-    };
-
     const job_name_list = [{name:'기획',value:'plan'}, {name:'디자인',value:'design'},{name:'개발',value:'dev'},{name:'마케팅',value:'market'}, {name:'예비창업가',value:'start'}];
     const information_name_list = [{name:'컨퍼런스',value:'confer'},{name:'강연',value:'mento'},{name:'네트워크',value:'study'},{name:'공모전',value:'idea'}];
 
@@ -371,57 +362,57 @@ class MainPage extends React.Component{
       return handleChange;
     }
 
-    const inform_list = [
-      {id:'contest',name:'공모전'},
-      {id:'network',name:'네트워킹'},
-      {id:'consult',name:'컨설팅'},
-      {id:'study',name:'스터디'},
-    ]
+    // const inform_list = [
+    //   {id:'contest',name:'공모전'},
+    //   {id:'network',name:'네트워킹'},
+    //   {id:'consult',name:'컨설팅'},
+    //   {id:'study',name:'스터디'},
+    // ]
 
-    const onChange = ({target})=>{
-      let eventInfo = [];
-      let addInfo = [];
-      let removeInfo = [];
+    // const onChange = ({target})=>{
+    //   let eventInfo = [];
+    //   let addInfo = [];
+    //   let removeInfo = [];
 
-      for(let item of this.state.schedule_data){
-        if ((target.id === item.typed)){
-          if (target.checked){
-            item['status'] = target.checked;
-            eventInfo.push(item);
-            let other = {...item};
-            delete other.status;
-            addInfo.push(other);
-          }
-          else{
-            item['status'] = target.checked;
-            eventInfo.push(item);
-            let other = {...item};
-            delete other.status;
-            removeInfo.push(other);
-          }
-        }
-        else{
-          // item['status'] = target.checked;
-          if (item.status){
-            eventInfo.push(item);
-            let other = {...item};
-            delete other.status;
-            addInfo.push(other);
-          }
-          else{
-            eventInfo.push(item);
-            let other = {...item};
-            delete other.status;
-            removeInfo.push(other);
-          }
-        }
-      }
-      // cookies.set('event-data',eventInfo);
+    //   for(let item of this.state.schedule_data){
+    //     if ((target.id === item.typed)){
+    //       if (target.checked){
+    //         item['status'] = target.checked;
+    //         eventInfo.push(item);
+    //         let other = {...item};
+    //         delete other.status;
+    //         addInfo.push(other);
+    //       }
+    //       else{
+    //         item['status'] = target.checked;
+    //         eventInfo.push(item);
+    //         let other = {...item};
+    //         delete other.status;
+    //         removeInfo.push(other);
+    //       }
+    //     }
+    //     else{
+    //       // item['status'] = target.checked;
+    //       if (item.status){
+    //         eventInfo.push(item);
+    //         let other = {...item};
+    //         delete other.status;
+    //         addInfo.push(other);
+    //       }
+    //       else{
+    //         eventInfo.push(item);
+    //         let other = {...item};
+    //         delete other.status;
+    //         removeInfo.push(other);
+    //       }
+    //     }
+    //   }
+    //   // cookies.set('event-data',eventInfo);
 
-      this.calendarRef.current.props.eventAdd(addInfo);
-      this.calendarRef.current.props.eventRemove(removeInfo);
+    //   this.calendarRef.current.props.eventAdd(addInfo);
+    //   this.calendarRef.current.props.eventRemove(removeInfo);
 
-    };  
+    // };  
     const DAY_NAMES = ['일','월','화','수','목','금','토',];
 
     return (
